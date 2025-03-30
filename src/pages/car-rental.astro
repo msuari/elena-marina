@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Placeholder Car Rental Data (Replace with real details)
+const rentals = [
+  {
+    name: "Rental Company A / Comparison Site",
+    description: "Buena opción por [razón específica, p.ej., precios competitivos, variedad de coches, buena reputación en la isla].",
+    website: "#", // Replace with actual link
+    logoSrc: "/logo-placeholder-a.png" // Optional: Add logo to /public
+  },
+  {
+    name: "Rental Company B",
+    description: "Recomendado si buscas [razón específica, p.ej., coches automáticos, oficinas en el aeropuerto y ciudad, seguros específicos].",
+    website: "#",
+    logoSrc: "/logo-placeholder-b.png" // Optional: Add logo to /public
+  },
+  {
+    name: "Local Provider C",
+    description: "Una empresa local con [razón específica, p.ej., trato más personal, quizás incluyen extras como sillas de bebé sin coste].",
+    website: "#",
+    logoSrc: "/logo-placeholder-c.png" // Optional: Add logo to /public
+  }
+];
+---
+
+<Layout title="Alquiler de Coche - Boda Elena & Marina">
+  <main class="bg-stone-50 text-gray-700 font-sans antialiased min-h-screen">
+    <div class="container mx-auto px-6 py-20 md:py-28">
+      <h1 class="text-4xl md:text-5xl font-serif font-medium text-center mb-10 md:mb-12 text-gray-800" data-aos="fade-down">Recomendaciones para Alquilar Coche</h1>
+
+      <section class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-600 mb-12 md:mb-16" data-aos="fade-up">
+        <p class="mb-4">
+          Mallorca es una isla preciosa con muchos rincones por descubrir. Para poder moveros con total libertad y aprovechar al máximo vuestra estancia, os recomendamos encarecidamente alquilar un coche.
+        </p>
+        <p>
+          El transporte público fuera de Palma puede ser limitado, especialmente para llegar a lugares como la finca o explorar calas y pueblos con encanto. Tener coche os dará la flexibilidad para ir a vuestro aire.
+        </p>
+      </section>
+
+      <section class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="text-2xl md:text-3xl font-serif font-medium text-center mb-10 text-gray-800 border-b pb-3">Opciones Recomendadas</h2>
+        <div class="space-y-8">
+          {rentals.map((rental) => (
+            <div class="flex flex-col sm:flex-row items-center bg-white p-6 rounded-lg shadow-md gap-6">
+              {/* Optional Logo */}
+              {rental.logoSrc && (
+                <div class="flex-shrink-0 w-24 h-16 flex items-center justify-center mb-4 sm:mb-0">
+                  <img src={rental.logoSrc} alt={`${rental.name} logo`} class="max-w-full max-h-full object-contain" />
+                </div>
+              )}
+              <div class="flex-grow text-center sm:text-left">
+                <h3 class="text-xl font-semibold mb-2 text-gray-700">{rental.name}</h3>
+                <p class="text-gray-600 mb-3">{rental.description}</p>
+                <a 
+                  href={rental.website} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-block text-blue-600 hover:underline font-medium text-sm"
+                >
+                  Visitar Sitio Web →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Back Link */}
+      <div class="text-center mt-16 md:mt-20" data-aos="fade-up">
+         <a 
+          href="/" 
+          class="inline-block border-2 border-gray-800 hover:bg-gray-800 hover:text-white text-gray-800 font-semibold py-2 px-8 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
+        >
+          Volver a la Página Principal
+        </a>
+      </div>
+      
+    </div>
+  </main>
+</Layout> 
