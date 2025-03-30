@@ -1,0 +1,201 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Wedding details
+const weddingDate = new Date('2025-11-08T12:00:00'); // November 8th, 6 PM - adjust time if needed
+---
+
+<Layout title="Elena & Marina's Wedding">
+  <main class="bg-white text-gray-700 font-sans antialiased">
+    <!-- Landing Section: Big Photo & Countdown -->
+    <section class="relative h-screen flex items-center justify-end text-right text-white overflow-hidden pr-10 md:pr-20">
+      <!-- Background Image -->
+      <div class="absolute inset-0 bg-gray-500">
+        <img 
+          src="/swing-bw.jpg" 
+          alt="Elena and Marina" 
+          class="w-full h-full object-cover opacity-70"
+        /> 
+      </div>
+      <div class="relative z-10 p-8 md:p-12 rounded-lg" data-aos="fade-left" data-aos-delay="200">
+        <h1 class="text-5xl md:text-7xl font-serif font-medium mb-4 text-white-900">Elena & Marina</h1>
+        <!-- <p class="text-2xl md:text-3xl mb-5 font-serif text-white-800">¡Nos casamos!</p> -->
+		<p class="text-4xl font-serif text-white-800">8 de Noviembre 2025</p>
+        <!-- Countdown Component -->
+        <div id="countdown" class="text-xl font-serif tracking-wider mb-2 text-white-900">
+			Cargando cuenta atrás...
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <div class="container mx-auto px-6 py-20 md:py-28 space-y-16 md:space-y-24">
+      
+      <!-- Couple Description Section -->
+      <section id="couple" class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-serif font-medium mb-8 text-gray-800">Nosotras</h2>
+        <p class="text-lg leading-relaxed mb-4 text-gray-600">
+			Elena y Marina son ideales y lo sabéis.
+        </p>
+         <p class="text-lg leading-relaxed text-gray-600">
+			¡Estamos deseando celebrar este día tan especial con todos vosotros!
+        </p>
+      </section>
+
+      <!-- Divider -->
+      <hr class="max-w-xs mx-auto border-t border-gray-300" data-aos="fade-up"/>
+
+      <!-- Celebration Details Section -->
+      <section 
+        id="celebration" 
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-10" 
+        data-aos="fade-up"
+      >
+        {/* Text Column */}
+        <div class="md:order-1 text-center md:text-left"> {/* Center text on mobile, left on md+ */}
+          <h2 class="text-3xl md:text-4xl font-serif font-medium mb-6 text-gray-800">La Celebración</h2>
+          <p class="text-lg leading-relaxed mb-2">
+            <strong>Donde:</strong> <a href="/finca" class="text-gray-800 underline hover:text-gray-600">Finca Tagamanent</a>, Ctra. Montuïri - Sant Joan, Km.2, 07230, Mallorca
+          </p>
+          <p class="text-lg leading-relaxed mb-6">
+            <strong>Cuando:</strong> Sábado, 8 de Noviembre, 2025 a las 12:00
+          </p>
+          <p class="text-md text-gray-600">
+            Tanto la ceremonia como la fiesta serán en el mismo lugar. La vestimenta es formal pero si no tienes, no te preocupes, te daremos de comer a parte.
+          </p>
+        </div>
+        {/* Image Column - Replaced with Swiper Carousel */}
+        <div class="w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg md:order-2 relative" data-aos="fade-left">
+          {/* Swiper Container */}
+          <div class="swiper celebration-swiper h-full">
+            {/* Additional required wrapper */}
+            <div class="swiper-wrapper">
+              {/* Slides */}
+              <div class="swiper-slide">
+                <img src="/tagamanent/altar.webp" alt="Lugar de la celebración - Imagen 1" class="w-full h-full object-cover" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/tagamanent/pati.webp" alt="Lugar de la celebración - Imagen 2" class="w-full h-full object-cover" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/tagamanent/exterior-vistes.jpg" alt="Lugar de la celebración - Imagen 3" class="w-full h-full object-cover" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/tagamanent/top.jpg" alt="Lugar de la celebración - Imagen 4" class="w-full h-full object-cover" />
+              </div>
+              {/* Add more slides as needed */}
+            </div>
+            {/* Pagination */}
+            <div class="swiper-pagination"></div>
+            {/* Navigation buttons */}
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <hr class="max-w-xs mx-auto border-t border-gray-300" data-aos="fade-up"/>
+
+      <!-- Confirmation Link Section -->
+      <section id="confirm" class="text-center" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-serif font-medium mb-8 text-gray-800">Confirmación de Asistencia</h2>
+        <p class="text-lg mb-8 text-gray-600">
+			Por favor, avísanos si puedes asistir antes del 1 de Octubre para que podamos finalizar los preparativos.
+        </p>
+        <a 
+          href="[YOUR_GOOGLE_FORM_LINK_HERE]" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-10 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
+        >
+			Confirmar Asistencia
+        </a>
+      </section>
+
+       <!-- Divider -->
+      <hr class="max-w-xs mx-auto border-t border-gray-300" data-aos="fade-up"/>
+
+      <!-- Recommendations Link Section -->
+      <section id="recommendations" class="text-center" data-aos="fade-up">
+         <h2 class="text-3xl md:text-4xl font-serif font-medium mb-8 text-gray-800">Viaje y Alojamiento</h2>
+         <p class="text-lg mb-8 text-gray-600">
+           ¿Necesitas recomendaciones de lugares donde alojarte o cosas que hacer cerca?
+         </p>
+        <a 
+          href="/accommodation"
+          class="inline-block border-2 border-gray-800 hover:bg-gray-800 hover:text-white text-gray-800 font-semibold py-3 px-10 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
+        >
+          Ver Opciones de Alojamiento
+        </a>
+         <a 
+          href="/recommendations"
+          class="inline-block ml-4 border-2 border-gray-500 hover:bg-gray-500 hover:text-white text-gray-500 font-semibold py-3 px-10 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
+        >
+          Qué Hacer
+        </a>
+      </section>
+      
+    </div>
+  </main>
+
+  <!-- Simple Countdown Script -->	
+   <script define:vars={{ weddingDate }}>
+    const countdownElement = document.getElementById('countdown');
+    const targetDate = new Date(weddingDate).getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        countdownElement.innerHTML = "The day is here!";
+        clearInterval(interval);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `Faltan ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial call
+  </script>
+
+  <!-- Swiper Initialization Script -->
+  <script>
+    // Import Swiper and modules
+    import Swiper from 'swiper';
+    import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+    // Import Swiper styles (important!)
+    import 'swiper/css';
+    import 'swiper/css/navigation';
+    import 'swiper/css/pagination';
+
+    const swiper = new Swiper('.celebration-swiper', {
+      // Use necessary modules
+      modules: [Navigation, Pagination, Autoplay],
+      // Optional parameters
+      loop: true,
+      autoplay: {
+        delay: 4000, // Delay between transitions (in ms)
+        disableOnInteraction: false, // Autoplay will not be disabled after user interactions 
+      },
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
+</Layout>

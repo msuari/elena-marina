@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Swiper Customizations */
+.celebration-swiper {
+  --swiper-navigation-color: #ffffff; /* Set arrows to white */
+  --swiper-pagination-color: #ffffff; /* Set pagination bullets to white */
+
+  /* Optional: Add a subtle shadow for better visibility on light parts of images */
+  --swiper-navigation-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Adjust shadow for pagination bullets if needed */
+.celebration-swiper .swiper-pagination-bullet {
+  /* Example: Adding a dark outline if bullets are hard to see */
+  /* box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3); */
+}
+
+/* Adjust arrow size if needed */
+/* .celebration-swiper .swiper-button-prev, 
+.celebration-swiper .swiper-button-next {
+  --swiper-navigation-size: 30px; 
+} */
+.bg-white {
+    background-color: #fdfdfe;
+}
