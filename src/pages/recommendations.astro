@@ -1,32 +1,170 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// Define recommendation data with links
+const recommendations = [
+  // Day 1: Palma & Southwest
+  { category: "Día 1: Palma", title: "Casco Antiguo", description: "Piérdete por sus callejuelas, descubre patios escondidos y admira la arquitectura.", imageSrc: "/elena-marina/recommendations/palma-casco-antiguo.jpg", link: "https://www.google.com/maps/place/Casco+Antiguo,+Palma" }, // Example link
+  { category: "Día 1: Palma", title: "Catedral (La Seu)", description: "Imprescindible. Contempla su majestuosidad por fuera y por dentro.", imageSrc: "/elena-marina/recommendations/palma-seu.jpg", link: "https://catedraldemallorca.org/es/" },
+  { category: "Día 1: Palma", title: "Fundació Miró Mallorca", description: "Visita imprescindible para amantes del arte. Estudios y obras de Joan Miró en un entorno espectacular.", imageSrc: "/elena-marina/recommendations/miro.jpg", link: "https://miromallorca.com/es/" },
+  { category: "Día 1: Palma", title: "Paseo del Borne & Jaime III", description: "Zonas elegantes con tiendas y cafés.", imageSrc: "/elena-marina/recommendations/palma-borne.jpg", link: "https://www.google.com/maps/place/Passeig+del+Born,+Palma" },
+  { category: "Día 1: Palma", title: "Mercat de l'Olivar / Santa Catalina", description: "Para probar productos locales o tomar algo.", imageSrc: "/elena-marina/recommendations/palma-mercat.jpg", link: "https://mercatolivar.com/" }, // Link to one market example
+  { category: "Día 1: Costa Suroeste", title: "Cala Comptessa / Illetas", description: "Playas bonitas y accesibles cerca de Palma.", imageSrc: "/elena-marina/recommendations/cala-comtessa.jpg", link: "https://www.google.com/maps/place/Cala+Comtessa" },
+  { category: "Día 1: Costa Suroeste", title: "Port d'Andratx", description: "Puerto pesquero con encanto, ideal para pasear y tomar algo al atardecer.", imageSrc: "/elena-marina/recommendations/port-andratx.jpg", link: "https://www.google.com/maps/place/Port+d'Andratx" },
+  { category: "Día 1: Palma", title: "Castell de Bellver", description: "Alternativa con vistas panorámicas de Palma.", imageSrc: "/elena-marina/recommendations/castell-bellver.jpg", link: "https://castelldebellver.palma.cat/es/" },
+
+  // Day 2: Tramuntana
+  { category: "Día 2: Tramuntana", title: "Valldemossa", description: "Famoso por su Cartuja y calles empedradas. Prueba la coca de patata.", imageSrc: "/elena-marina/recommendations/valldemossa.jpg", link: "https://www.google.com/maps/place/Valldemossa" },
+  { category: "Día 2: Tramuntana", title: "Deià", description: "Pueblo de artistas colgado sobre el mar. Visita Cala Deià.", imageSrc: "/elena-marina/recommendations/deia.jpg", link: "https://www.google.com/maps/place/Dei%C3%A0" },
+  { category: "Día 2: Tramuntana", title: "Sóller y Port de Sóller", description: "Pueblo pintoresco y puerto accesible con tranvía antiguo.", imageSrc: "/elena-marina/recommendations/soller.jpg", link: "https://www.google.com/maps/place/S%C3%B3ller" },
+  { category: "Día 2: Tramuntana", title: "Fornalutx", description: "Opcional: Considerado uno de los pueblos más bonitos de España.", imageSrc: "/elena-marina/recommendations/fornalutx.jpg", link: "https://www.google.com/maps/place/Fornalutx" },
+  { category: "Día 2: Tramuntana", title: "Sa Calobra", description: "Opcional: Carretera espectacular y cala única, requiere tiempo.", imageSrc: "/elena-marina/recommendations/sa-calobra.jpg", link: "https://www.google.com/maps/place/Sa+Calobra" },
+
+  // Food: Palma
+  { category: "Comer: Palma", title: "Bar España / Molta Barra", description: "Tapas auténticas y buen ambiente (zona centro).", imageSrc: "/elena-marina/recommendations/tapas-palma.jpg", link: "https://www.google.com/maps/search/Bar+Espa%C3%B1a+Palma" }, // Search link example
+  { category: "Comer: Palma", title: "Mercat 1930", description: "Mercados gastronómicos con diversos puestos.", imageSrc: "/elena-marina/recommendations/mercado-gastro.jpg", link: "https://www.mercat1930.com/" }, // Link to one market example
+  { category: "Comer: Palma", title: "Zona Santa Catalina", description: "Muchos restaurantes de moda y variados.", imageSrc: "/elena-marina/recommendations/santa-catalina.jpg", link: "https://www.google.com/maps/place/Santa+Catalina,+Palma" },
+  { category: "Comer: Palma", title: "Ca n'Eduardo", description: "Marisco y pescado fresco con vistas al puerto (más clásico).", imageSrc: "/elena-marina/recommendations/can-eduardo.jpg", link: "https://caneduardo.com/" },
+
+  // Food: Sierra/Other
+  { category: "Comer: Sierra", title: "Ca's Patró March (Cala Deià)", description: "Pescado fresco sobre el mar (famoso, reservar!).", imageSrc: "/elena-marina/recommendations/cas-patro-march.jpg", link: "https://maps.app.goo.gl/UCHramgtkiqrmeRU8" },
+  { category: "Comer: Sierra", title: "Restaurantes en Sóller", description: "Muchas opciones, desde paellas a cocina más moderna.", imageSrc: "/elena-marina/recommendations/restaurante-soller.jpg", link: "https://www.google.com/maps/search/restaurantes+en+soller" }, // Search link example
+  { category: "Comer: Otros", title: "Cellers (Inca, Sineu...)", description: "Restaurantes tradicionales para probar frito mallorquín, sopas mallorquinas, etc.", imageSrc: "/elena-marina/recommendations/sencelles.jpg", link: "https://www.google.com/maps/search/celler+mallorca" }, // Search link example
+  { category: "Comer: Imprescindibles", title: "Ensaimada", description: "Probar en Forn de Sant Joan o Can Joan de s'Aigo (Palma).", imageSrc: "/elena-marina/recommendations/ensaimada.jpg", link: "https://canjoandesaigo.com/" }, // Link to one bakery example
+  { category: "Comer: Imprescindibles", title: "Sobrasada", description: "Embutido típico mallorquín. ¡Pruébala!", imageSrc: "/elena-marina/recommendations/sobrasada.jpg", link: "#" }, // No specific link, maybe link to a recipe or info page?
+];
+
+// Filter recommendations by category
+const day1Activities = recommendations.filter(r => r.category.startsWith("Día 1"));
+const day2Activities = recommendations.filter(r => r.category.startsWith("Día 2"));
+const foodPlaces = recommendations.filter(r => r.category.startsWith("Comer"));
+
+// Helper function to get category color (optional styling)
+function getCategoryColor(category) {
+  if (category.startsWith("Día 1")) return "bg-blue-100 text-blue-800";
+  if (category.startsWith("Día 2")) return "bg-green-100 text-green-800";
+  if (category.startsWith("Comer")) return "bg-yellow-100 text-yellow-800";
+  return "bg-gray-100 text-gray-800";
+}
 ---
 
-<Layout title="Recommendations - Elena & Marina's Wedding">
-  <main class="bg-white text-gray-700 font-sans antialiased min-h-screen">
-    <div class="container mx-auto px-6 py-20 md:py-28">
-      <h1 class="text-4xl md:text-5xl font-serif font-medium text-center mb-16 md:mb-20 text-gray-800" data-aos="fade-down">Things to Do Nearby</h1>
+<Layout title="Recomendaciones - Boda Elena & Marina">
+  <main class="bg-stone-50 text-gray-700 font-sans antialiased min-h-screen">
+    
+    {/* <!-- Full Width Hero Image --> */}
+    <div 
+      class="w-full h-90 md:h-96"
+      style="background-image: url('/elena-marina/recommendations/muro.jpg'); background-size: cover; background-position: center 80%;"
+      data-aos="fade-in" 
+      role="img" 
+      aria-label="Vista panorámica de Mallorca">
+      {/* This div is just for the background image */}
+    </div>
 
-      <section id="activities" class="mb-16 md:mb-20 max-w-3xl mx-auto" data-aos="fade-up">
-        <h2 class="text-2xl md:text-3xl font-serif font-medium mb-8 text-gray-800 border-b pb-3">Local Attractions & Activities</h2>
-         <div class="space-y-6 text-lg">
-          <div class="text-gray-600">
-            <h3 class="text-xl font-semibold mb-1 text-gray-700">[Activity/Place 1]</h3>
-            <p>[Brief description]</p>
-          </div>
-           <div class="text-gray-600">
-            <h3 class="text-xl font-semibold mb-1 text-gray-700">[Activity/Place 2]</h3>
-            <p>[Brief description]</p>
+    <div class="container mx-auto px-6 py-16 md:py-20"> {/* Adjusted padding-top */}
+      <h1 class="text-4xl md:text-5xl font-serif font-medium text-center mb-16 md:mb-20 text-gray-800" data-aos="fade-down">Qué Hacer y Dónde Comer en Mallorca</h1>
+
+      <section class="space-y-16 md:space-y-20">
+
+        {/* Day 1 Section */}
+        <div data-aos="fade-up">
+          <h2 class="text-2xl md:text-3xl font-serif font-medium mb-8 text-gray-800 border-b pb-3">Día 1: Palma y Costa Suroeste</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {day1Activities.map((item, index) => (
+              <a 
+                href={item.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="block bg-white rounded-lg shadow-md overflow-hidden flex flex-col transform transition duration-300 hover:shadow-xl hover:-translate-y-1 group" 
+                data-aos="fade-up" 
+                data-aos-delay={index * 50}
+              >
+                {item.imageSrc ? (
+                  <img src={item.imageSrc} alt={item.title} class="h-48 w-full object-cover"/>
+                ) : (
+                  <div class="h-48 w-full bg-gray-200 flex items-center justify-center text-gray-400">Imagen no disponible</div>
+                )}
+                <div class="p-4 flex flex-col flex-grow">
+                  <h3 class="text-lg font-semibold mb-2 text-gray-800 group-hover:underline">{item.title}</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed mb-3 flex-grow">{item.description}</p>
+                  <span class={`text-xs font-medium px-2.5 py-0.5 rounded-full self-start ${getCategoryColor(item.category)}`}>
+                    {item.category.split(': ')[1]} {/* Show sub-category */}
+                  </span>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
+
+        {/* Day 2 Section */}
+        <div data-aos="fade-up">
+           <h2 class="text-2xl md:text-3xl font-serif font-medium mb-8 text-gray-800 border-b pb-3">Día 2: Serra de Tramuntana</h2>
+           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+             {day2Activities.map((item, index) => (
+               <a 
+                 href={item.link} 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="block bg-white rounded-lg shadow-md overflow-hidden flex flex-col transform transition duration-300 hover:shadow-xl hover:-translate-y-1 group" 
+                 data-aos="fade-up" 
+                 data-aos-delay={index * 50}
+               >
+                 {item.imageSrc ? (
+                   <img src={item.imageSrc} alt={item.title} class="h-48 w-full object-cover"/>
+                 ) : (
+                   <div class="h-48 w-full bg-gray-200 flex items-center justify-center text-gray-400">Imagen no disponible</div>
+                 )}
+                 <div class="p-4 flex flex-col flex-grow">
+                   <h3 class="text-lg font-semibold mb-2 text-gray-800 group-hover:underline">{item.title}</h3>
+                   <p class="text-gray-600 text-sm leading-relaxed mb-3 flex-grow">{item.description}</p>
+                   <span class={`text-xs font-medium px-2.5 py-0.5 rounded-full self-start ${getCategoryColor(item.category)}`}>
+                     {item.category.split(': ')[1]}
+                   </span>
+                 </div>
+               </a>
+             ))}
+           </div>
+        </div>
+
+        {/* Food Recommendations Section */}
+        <div data-aos="fade-up">
+          <h2 class="text-2xl md:text-3xl font-serif font-medium mb-8 text-gray-800 border-b pb-3">Dónde Comer</h2>
+           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+             {foodPlaces.map((item, index) => (
+               <a 
+                 href={item.link} 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="block bg-white rounded-lg shadow-md overflow-hidden flex flex-col transform transition duration-300 hover:shadow-xl hover:-translate-y-1 group" 
+                 data-aos="fade-up" 
+                 data-aos-delay={index * 50}
+               >
+                 {item.imageSrc ? (
+                   <img src={item.imageSrc} alt={item.title} class="h-48 w-full object-cover"/>
+                 ) : (
+                   <div class="h-48 w-full bg-gray-200 flex items-center justify-center text-gray-400">Imagen no disponible</div>
+                 )}
+                 <div class="p-4 flex flex-col flex-grow">
+                   <h3 class="text-lg font-semibold mb-2 text-gray-800 group-hover:underline">{item.title}</h3>
+                   <p class="text-gray-600 text-sm leading-relaxed mb-3 flex-grow">{item.description}</p>
+                   <span class={`text-xs font-medium px-2.5 py-0.5 rounded-full self-start ${getCategoryColor(item.category)}`}>
+                     {item.category.split(': ')[1]}
+                   </span>
+                 </div>
+               </a>
+             ))}
+           </div>
+        </div>
+
       </section>
       
+      {/* Back Link */}
       <div class="text-center mt-16 md:mt-20" data-aos="fade-up">
          <a 
           href="/" 
           class="inline-block border-2 border-gray-800 hover:bg-gray-800 hover:text-white text-gray-800 font-semibold py-2 px-8 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
         >
-          Back to Main Page
+          Volver a la Página Principal
         </a>
       </div>
       

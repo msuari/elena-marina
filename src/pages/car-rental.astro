@@ -1,25 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Placeholder Car Rental Data (Replace with real details)
+// Car Rental Data
 const rentals = [
   {
-    name: "Rental Company A / Comparison Site",
-    description: "Buena opción por [razón específica, p.ej., precios competitivos, variedad de coches, buena reputación en la isla].",
-    website: "#", // Replace with actual link
-    logoSrc: "/logo-placeholder-a.png" // Optional: Add logo to /public
+    name: "Hertz",
+    description: "Una de las empresas más fiables a nivel mundial. Ofrece una amplia flota de vehículos, recogida en el aeropuerto y ciudad, y un servicio de atención al cliente 24/7. Recomendada por su profesionalidad y transparencia.",
+    website: "https://www.hertz.es/p/alquiler-de-coches/espana/mallorca/palma-de-mallorca",
+    discount_link: "https://www.chollometro.com/cupones/hertz.es",
+    discount_code: null,
+    logoSrc: "/elena-marina/car-rental/hertz.png"
   },
   {
-    name: "Rental Company B",
-    description: "Recomendado si buscas [razón específica, p.ej., coches automáticos, oficinas en el aeropuerto y ciudad, seguros específicos].",
-    website: "#",
-    logoSrc: "/logo-placeholder-b.png" // Optional: Add logo to /public
+    name: "Sixt",
+    description: "Reconocida por su excelente servicio y flota premium. Dispone de vehículos de alta gama y económicos, con múltiples ubicaciones en la isla. Destaca por su app móvil y proceso de alquiler digital.",
+    website: "https://www.sixt.es/alquiler-coche/espana/palma-de-mallorca/",
+    discount_link: "https://www.chollometro.com/cupones/sixt.es",
+    discount_code: null,
+    logoSrc: "/elena-marina/car-rental/sixt.jpg"
   },
   {
-    name: "Local Provider C",
-    description: "Una empresa local con [razón específica, p.ej., trato más personal, quizás incluyen extras como sillas de bebé sin coste].",
-    website: "#",
-    logoSrc: "/logo-placeholder-c.png" // Optional: Add logo to /public
+    name: "OK Mobility",
+    description: "Buena opción por precios competitivos, variedad de coches y buena reputación en la isla. Ideal para quienes buscan una opción más económica sin comprometer la calidad.",
+    website: "https://shorturl.at/65GGo",
+    discount_link: "https://www.chollometro.com/cupones/okmobility.com",
+    discount_code: "MALLORCA312",
+    logoSrc: "/elena-marina/car-rental/okmobility.jpg"
   }
 ];
 ---
@@ -42,25 +48,45 @@ const rentals = [
         <h2 class="text-2xl md:text-3xl font-serif font-medium text-center mb-10 text-gray-800 border-b pb-3">Opciones Recomendadas</h2>
         <div class="space-y-8">
           {rentals.map((rental) => (
-            <div class="flex flex-col sm:flex-row items-center bg-white p-6 rounded-lg shadow-md gap-6">
-              {/* Optional Logo */}
-              {rental.logoSrc && (
-                <div class="flex-shrink-0 w-24 h-16 flex items-center justify-center mb-4 sm:mb-0">
-                  <img src={rental.logoSrc} alt={`${rental.name} logo`} class="max-w-full max-h-full object-contain" />
+            <div class="relative bg-white rounded-lg shadow-md group hover:shadow-xl transition-shadow duration-300">
+              <a 
+                href={rental.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex flex-col sm:flex-row items-center p-6 gap-6"
+              >
+                {/* Optional Logo */}
+                {rental.logoSrc && (
+                  <div class="flex-shrink-0 w-24 h-16 flex items-center justify-center mb-4 sm:mb-0">
+                    <img src={rental.logoSrc} alt={`${rental.name} logo`} class="max-w-full max-h-full object-contain" />
+                  </div>
+                )}
+                <div class="flex-grow text-center sm:text-left">
+                  <h3 class="text-xl font-semibold mb-2 text-gray-700 group-hover:text-blue-600 transition-colors duration-200">{rental.name}</h3>
+                  <p class="text-gray-600 mb-3">{rental.description}</p>
+                  <span class="inline-block text-blue-600 hover:underline font-medium text-sm">
+                    Visitar Sitio Web →
+                  </span>
+                </div>
+              </a>
+              {/* Discount Link - Only show if there's a valid discount link */}
+              {rental.discount_link && rental.discount_link.trim() !== '' && (
+                <div class="absolute bottom-6 right-6 flex items-center gap-3">
+                  {rental.discount_code && rental.discount_code.trim() !== '' && (
+                    <span class="text-sm font-medium text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
+                      Código: {rental.discount_code}
+                    </span>
+                  )}
+                  <a 
+                    href={rental.discount_link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="inline-block text-sm font-medium text-emerald-700 bg-emerald-100 hover:bg-emerald-200 px-3 py-1 rounded-full transition duration-200 ease-in-out z-10"
+                  >
+                    Ver Descuentos % 
+                  </a>
                 </div>
               )}
-              <div class="flex-grow text-center sm:text-left">
-                <h3 class="text-xl font-semibold mb-2 text-gray-700">{rental.name}</h3>
-                <p class="text-gray-600 mb-3">{rental.description}</p>
-                <a 
-                  href={rental.website} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="inline-block text-blue-600 hover:underline font-medium text-sm"
-                >
-                  Visitar Sitio Web →
-                </a>
-              </div>
             </div>
           ))}
         </div>
