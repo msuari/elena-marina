@@ -10,5 +10,5 @@ export default defineConfig({
   base: '/elena-marina',
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
 });
