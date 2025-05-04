@@ -81,7 +81,8 @@ const { title } = Astro.props;
 		<script is:inline>
 			AOS.init({
 				duration: 800, // Animation duration in ms
-				once: true // Whether animation should happen only once - while scrolling down
+				once: true, // Whether animation should happen only once - while scrolling down
+				disable: 'mobile'
 			});
 
 			// Mobile Menu Toggle Script
