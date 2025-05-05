@@ -32,14 +32,48 @@ const weddingDate = new Date('2025-11-08T12:00:00'); // November 8th, 6 PM - adj
     <div class="container mx-auto px-6 py-20 md:py-28 space-y-16 md:space-y-24">
       
       <!-- Couple Description Section -->
-      <section id="couple" class="text-center max-w-3xl mx-auto" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-serif font-medium mb-8 text-gray-800">Nosotras</h2>
-        <p class="text-lg leading-relaxed mb-4 text-gray-600">
-			Elena y Marina son ideales y lo sabéis.
+      <section 
+        id="couple" 
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-10" 
+        data-aos="fade-up"
+      >
+        {/* Text Column */}
+        <div class="md:order-1 text-left md:text-left">
+          <h2 class="text-3xl md:text-4xl font-serif font-medium mb-8 text-gray-800">Nosotras</h2>
+          <p class="text-lg leading-relaxed mb-4 text-gray-600">
+            Desde que en 2015 nuestros caminos se cruzaron nuestro destino fue el mismo.
+          </p>
+          <p class="text-lg leading-relaxed text-gray-600">
+            ¡Estamos deseando celebrar este día tan especial con todos vosotros!
+          </p>
+        </div>
+        {/* Image Column */}
+        <div class="w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg md:order-2 relative flex items-center justify-center" data-aos="fade-left">
+          <img 
+            src="/elena-marina/first.jpg" 
+            alt="Elena y Marina" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <hr class="max-w-xs mx-auto border-t border-gray-300" data-aos="fade-up"/>
+
+      <!-- Confirmation Link Section -->
+      <section id="confirm" class="text-center" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-serif font-medium mb-8 text-gray-800">Confirmación de Asistencia</h2>
+        <p class="text-lg mb-8 text-gray-600">
+			Por favor, avísanos si puedes asistir antes del 1 de Octubre para que podamos finalizar los preparativos.
         </p>
-         <p class="text-lg leading-relaxed text-gray-600">
-			¡Estamos deseando celebrar este día tan especial con todos vosotros!
-        </p>
+        <a 
+          href="https://forms.gle/1n2fJh6cmFzFEK8q8" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-10 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
+        >
+			Confirmar Asistencia
+        </a>
       </section>
 
       <!-- Divider -->
@@ -61,7 +95,7 @@ const weddingDate = new Date('2025-11-08T12:00:00'); // November 8th, 6 PM - adj
             <strong>Cuando:</strong> Sábado, 8 de Noviembre, 2025 a las 12:00
           </p>
           <p class="text-md text-gray-600">
-            Tanto la ceremonia como la fiesta serán en el mismo lugar. La vestimenta es formal pero si no tienes, no te preocupes, te daremos de comer a parte.
+            Tanto la ceremonia como la fiesta serán en el mismo lugar. La vestimenta es formal pero si no tienes, no te preocupes, te daremos de comer aparte.
           </p>
         </div>
         {/* Image Column - Replaced with Swiper Carousel */}
@@ -112,6 +146,9 @@ const weddingDate = new Date('2025-11-08T12:00:00'); // November 8th, 6 PM - adj
           <p class="text-lg leading-relaxed mb-4 text-gray-600">
             <strong>La mejor opción es venir en coche.</strong> Hay aparcamiento disponible en la finca. Si vienes desde Palma, calcula unos 30-40 minutos de trayecto.
           </p>
+          <p class="text-lg leading-relaxed mb-4 text-gray-600">
+            También proporcionaremos transporte desde Palma y el Arenal a la finca.
+          </p>
           <p class="text-lg leading-relaxed mb-6 text-gray-600">
             Puedes usar el mapa interactivo para obtener direcciones exactas desde tu ubicación. ¡Nos vemos allí!
           </p>
@@ -130,24 +167,6 @@ const weddingDate = new Date('2025-11-08T12:00:00'); // November 8th, 6 PM - adj
         </div>
       </section>
 
-      <!-- Divider -->
-      <hr class="max-w-xs mx-auto border-t border-gray-300" data-aos="fade-up"/>
-
-      <!-- Confirmation Link Section -->
-      <section id="confirm" class="text-center" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-serif font-medium mb-8 text-gray-800">Confirmación de Asistencia</h2>
-        <p class="text-lg mb-8 text-gray-600">
-			Por favor, avísanos si puedes asistir antes del 1 de Octubre para que podamos finalizar los preparativos.
-        </p>
-        <a 
-          href="https://forms.gle/1n2fJh6cmFzFEK8q8" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-10 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
-        >
-			Confirmar Asistencia
-        </a>
-      </section>
 
        <!-- Divider -->
       <hr class="max-w-xs mx-auto border-t border-gray-300" data-aos="fade-up"/>
