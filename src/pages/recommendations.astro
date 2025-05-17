@@ -8,7 +8,7 @@ const recommendations = [
   { category: "Día 1: Palma", title: "Catedral (La Seu)", description: "Imprescindible. Contempla su majestuosidad por fuera y por dentro.", imageSrc: "/elena-marina/recommendations/palma-seu.jpg", link: "https://catedraldemallorca.org/es/" },
   { category: "Día 1: Palma", title: "Fundació Miró Mallorca", description: "Visita imprescindible para amantes del arte. Estudios y obras de Joan Miró en un entorno espectacular.", imageSrc: "/elena-marina/recommendations/miro.jpg", link: "https://miromallorca.com/es/" },
   { category: "Día 1: Palma", title: "Paseo del Borne & Jaime III", description: "Zonas elegantes con tiendas y cafés.", imageSrc: "/elena-marina/recommendations/palma-borne.jpg", link: "https://www.google.com/maps/place/Passeig+del+Born,+Palma" },
-  { category: "Día 1: Palma", title: "Mercat de l'Olivar / Santa Catalina", description: "Para probar productos locales o tomar algo.", imageSrc: "/elena-marina/recommendations/palma-mercat.jpg", link: "https://mercatolivar.com/" }, // Link to one market example
+  { category: "Día 1: Palma", title: "Santa Catalina", description: "Zona de con locales y restaurantes de moda. Ideal para tomar algo por la noche.", imageSrc: "/elena-marina/recommendations/palma-mercat.jpg", link: "https://mercatolivar.com/" }, // Link to one market example
   { category: "Día 1: Costa Suroeste", title: "Port d'Andratx", description: "Puerto pesquero con encanto, ideal para pasear y tomar algo al atardecer.", imageSrc: "/elena-marina/recommendations/port-andratx.jpg", link: "https://www.google.com/maps/place/Port+d'Andratx" },
   { category: "Día 1: Palma", title: "Castell de Bellver", description: "Alternativa con vistas panorámicas de Palma.", imageSrc: "/elena-marina/recommendations/castell-bellver.jpg", link: "https://castelldebellver.palma.cat/es/" },
 
@@ -21,10 +21,8 @@ const recommendations = [
 
   // Food: Palma
   { category: "Comer: Palma", title: "Bar España / Molta Barra", description: "Tapas auténticas y buen ambiente (zona centro).", imageSrc: "/elena-marina/recommendations/tapas-palma.jpg", link: "https://www.google.com/maps/search/Bar+Espa%C3%B1a+Palma" }, // Search link example
-  { category: "Comer: Palma", title: "Mercat 1930", description: "Mercados gastronómicos con diversos puestos.", imageSrc: "/elena-marina/recommendations/mercado-gastro.jpg", link: "https://www.mercat1930.com/" }, // Link to one market example
-  { category: "Comer: Palma", title: "Zona Santa Catalina", description: "Muchos restaurantes de moda y variados.", imageSrc: "/elena-marina/recommendations/santa-catalina.jpg", link: "https://www.google.com/maps/place/Santa+Catalina,+Palma" },
   { category: "Comer: Palma", title: "Ca n'Eduardo", description: "Marisco y pescado fresco con vistas al puerto (más clásico).", imageSrc: "/elena-marina/recommendations/can-eduardo.jpg", link: "https://caneduardo.com/" },
-
+  { category: "Comer: Palma", title: "Ca'n Joan de s'Aigo", description: "Cafetería con las mejores ensaimadas de Mallorca.", imageSrc: "/elena-marina/recommendations/can-joan.jpg", link: "https://www.google.com/maps/place/Santa+Catalina,+Palma" },
   // Food: Sierra/Other
   { category: "Comer: Sierra", title: "Ca's Patró March (Cala Deià)", description: "Pescado fresco sobre el mar (famoso, reservar!).", imageSrc: "/elena-marina/recommendations/cas-patro-march.jpg", link: "https://maps.app.goo.gl/UCHramgtkiqrmeRU8" },
   { category: "Comer: Sierra", title: "Restaurantes en Sóller", description: "Muchas opciones, desde paellas a cocina más moderna.", imageSrc: "/elena-marina/recommendations/restaurante-soller.jpg", link: "https://www.google.com/maps/search/restaurantes+en+soller" }, // Search link example
@@ -67,7 +65,7 @@ function getCategoryColor(category: string) {
 
         {/* Day 1 Section */}
         <div data-aos="fade-up">
-          <h2 class="text-2xl md:text-3xl font-serif font-medium mb-8 text-gray-800 border-b pb-3">Día 1: Palma y Costa Suroeste</h2>
+          <h2 class="text-2xl md:text-3xl font-serif font-medium mb-8 text-gray-800 border-b pb-3">Palma y Costa Suroeste</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {day1Activities.map((item, index) => (
               <a 
@@ -97,7 +95,7 @@ function getCategoryColor(category: string) {
 
         {/* Day 2 Section */}
         <div data-aos="fade-up">
-           <h2 class="text-2xl md:text-3xl font-serif font-medium mb-8 text-gray-800 border-b pb-3">Día 2: Serra de Tramuntana</h2>
+           <h2 class="text-2xl md:text-3xl font-serif font-medium mb-8 text-gray-800 border-b pb-3">Serra de Tramuntana</h2>
            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
              {day2Activities.map((item, index) => (
                <a 
@@ -159,8 +157,9 @@ function getCategoryColor(category: string) {
       <!-- <iframe src="https://funhtml5games.com?embed=flappy" style="width:800px;height:520px;border:none;" frameborder="0" scrolling="no"></iframe> -->
       <!-- Flappy Bird Game Embed -->
       <div data-aos="fade-up">
-        <h2 class="text-2xl md:text-3xl font-serif font-medium mb-8 text-gray-800 border-b pb-3" data-aos="fade-down">Si sigues aburrido... Juega a Flappy Bird 🐣</h2>
-        <div class="mx-auto rounded-lg overflow-hidden shadow-lg" style="width: 700px; height: 500px;">
+        <h2 class="text-2xl md:text-3xl font-serif font-medium mb-8 text-gray-800 border-b pb-3" data-aos="fade-down">Si aun no sabes que hacer, ni donde comer... Juega a Flappy Bird 🐣</h2>
+        {/* Desktop version - hidden on mobile, shown on md and up */}
+        <div class="hidden md:block mx-auto rounded-lg overflow-hidden shadow-lg" style="width: 700px; height: 500px;">
           <iframe 
             src="https://funhtml5games.com?embed=flappy" 
             title="Flappy Bird Game" 
@@ -170,7 +169,17 @@ function getCategoryColor(category: string) {
             allowfullscreen
           ></iframe>
         </div>
-      
+        {/* Mobile version - shown on mobile, hidden on md and up */}
+        <div class="block md:hidden mx-auto rounded-lg overflow-hidden shadow-lg w-full max-w-[600px] h-[800px]">
+          <iframe 
+            src="https://www.noakim.io/flappy-bird/" 
+            title="Flappy Bird Game" 
+            class="w-full h-full"
+            frameborder="0" 
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
       </section>
       {/* Back Link */}
       <div class="text-center mt-16 md:mt-20" data-aos="fade-up">
