@@ -1,121 +1,264 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 // Wedding details
-const weddingDate = new Date('2025-11-08T12:00:00'); // November 8th, 6 PM - adjust time if needed
+const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adjust time if needed
 ---
 
 <Layout title="Elena & Marina's Wedding">
   <main class="bg-white text-gray-700 font-sans antialiased">
     <!-- Landing Section: Big Photo & Countdown -->
-    <section class="relative h-screen flex items-center justify-end text-right text-white overflow-hidden pr-10 md:pr-20">
+    <section
+      class="relative h-screen flex items-center justify-end text-right text-white overflow-hidden pr-10 md:pr-20"
+    >
       <!-- Background Image -->
       <div class="absolute inset-0 bg-gray-500">
-        <img 
-          src="/elena-marina/swing-bw.jpg" 
-          alt="Elena and Marina" 
+        <img
+          src="/elena-marina/swing-bw.jpg"
+          alt="Elena and Marina"
           class="w-full h-full object-cover opacity-70"
-        /> 
+        />
       </div>
-      <div class="relative z-10 p-8 md:p-12 rounded-lg" data-aos="fade-left" data-aos-delay="200">
-        <h1 class="text-5xl md:text-7xl font-serif font-medium mb-4 text-white-900">Elena & Marina</h1>
+      <div
+        class="relative z-10 p-8 md:p-12 rounded-lg"
+        data-aos="fade-left"
+        data-aos-delay="200"
+      >
+        <h1
+          class="text-5xl md:text-7xl font-serif font-medium mb-4 text-white-900"
+        >
+          Elena & Marina
+        </h1>
         <!-- <p class="text-2xl md:text-3xl mb-5 font-serif text-white-800">¡Nos casamos!</p> -->
-		<p class="text-4xl font-serif text-white-800">8 de Noviembre 2025</p>
+        <p class="text-4xl font-serif text-white-800">8 de Noviembre 2025</p>
         <!-- Countdown Component -->
-        <div id="countdown" class="text-xl font-serif tracking-wider mb-2 text-white-900">
-			Cargando cuenta atrás...
+        <div
+          id="countdown"
+          class="text-xl font-serif tracking-wider mb-2 text-white-900"
+        >
+          Cargando cuenta atrás...
         </div>
       </div>
     </section>
 
     <!-- Main Content Container -->
     <div class="container mx-auto px-6 py-20 md:py-28 space-y-16 md:space-y-24">
-      
       <!-- Couple Description Section -->
-      <section 
-        id="couple" 
-        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-10" 
+      <section
+        id="couple"
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-10"
         data-aos="fade-up"
       >
         {/* Text Column */}
         <div class="md:order-1 text-left md:text-left">
-          <h2 class="text-3xl md:text-4xl font-serif font-medium mb-8 text-gray-800">Nosotras</h2>
-          <p class="text-lg leading-relaxed mb-4 text-gray-600">
-            Desde que en 2015 nuestros caminos se cruzaron nuestro destino fue el mismo.
-          </p>
-          <p class="text-lg leading-relaxed text-gray-600">
-            ¡Estamos deseando celebrar este día tan especial con todos vosotros!
-          </p>
+          <h2
+            class="text-3xl md:text-4xl font-serif font-medium mb-8 text-gray-800"
+          >
+            La Historia
+          </h2>
+
+          <!-- Tab Navigation -->
+          <div class="flex space-x-4 mb-6">
+            <button
+              class="tab-button active px-4 py-2 text-lg font-medium border-b-2 border-gray-800 text-gray-800 transition-colors duration-200"
+              data-tab="elena"
+            >
+              Elena
+            </button>
+            <button
+              class="tab-button px-4 py-2 text-lg font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-800 transition-colors duration-200"
+              data-tab="marina"
+            >
+              Marina
+            </button>
+          </div>
+
+          <!-- Tab Content -->
+          <div class="tab-content">
+            <div id="elena" class="tab-pane active">
+              <p class="text-lg leading-relaxed mb-4 text-gray-600">
+                Hace 10 años Elena fue invitada a una cena en una casa para
+                participar en la organización de un festival de ciencia y arte
+                en Barcelona, la persona que le abrió la puerta fue Marina.
+
+                <br />
+                Lo que podría ser la sinopsis de un documental de Filmin sobre Ramón
+                y Cajal y el arte contemporáneo se convirtió en una comedia francesa
+                con demasiados actores y actrices secundarios.
+                <br />
+                Elena, seria y comprometida con el evento, esperando una cena a mesa
+                puesta con mantel y servilletas de tela, portaba un vino para sus
+                anfitrionas.
+                <br />
+                Marina, que habitaba en esa casa no estaba informada de la celebración
+                de ninguna cena. Además, sus otros invitados ya ocupaban el salón
+                y la organizadora de la cena de Elena no había ni llegado aún a casa.
+                <br />
+                Marina, acogedora, sonriente y resolutiva se propuso hacer la cena
+                para todos.
+                <br />
+                La anfitriona de la cena llegó con dos copas de más, y la idea que
+                tenía Elena en su cabeza de cenar a mesa puesta se difuminó con la
+                primera calada del porro de la directora del evento, que llegó una
+                hora más tarde.
+                <br />
+                ✨ Serendipia ✨
+                <br />
+                …
+                <br />
+                ..
+                <br />
+                .
+                <br />
+                Después de la primera y desastrosa toma de contacto, el festival
+                finalmente se celebró con la participación de Elena.
+                <br />
+                <br />
+                Marina y Elena 10 años más tarde ✨ se casan ✨
+              </p>
+            </div>
+            <div id="marina" class="tab-pane hidden">
+              <p class="text-lg leading-relaxed mb-4 text-gray-600">
+                Abrí la puerta; tras ella, apareció una amiga con la que no
+                había quedado y a la que no esperaba. Y alguien detrás de ella
+                que sostenía un vino y una mirada curiosa e intrigante.
+                <br />
+                Al inicio pasé por alto esa nueva presencia y concentré todos mis
+                esfuerzos en celebrar que mi amiga hubiera venido de forma tan aleatoria.
+                <br />
+                No estaba allí por mí. Por lo visto, esa noche se celebraba una cena
+                en mi casa, a la que no estaba invitada... y de la que nos acabaríamos
+                encargando mis amigos y yo.
+                <br />
+                No lo digo como algo negativo, pues la aleatoriedad de los acontecimientos
+                en esa época me fascinaba. Sabías cómo empezabas el día, pero nunca
+                cómo terminabas.
+                <br />
+                Y así fue, como sin saber por qué, empecé el día como cualquier otro
+                y lo terminé mejor de lo que nunca hubiera imaginado.
+                <br />
+                <br />
+                Diez años más tarde, me caso con la chica que vino con el vino.
+                <br />
+                ✨ Y vino para quedarse ✨
+              </p>
+            </div>
+          </div>
         </div>
         {/* Image Column */}
-        <div class="w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg md:order-2 relative flex items-center justify-center" data-aos="fade-left">
-          <img 
-            src="/elena-marina/first.jpg" 
-            alt="Elena y Marina" 
+        <div
+          class="w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg md:order-2 relative flex items-center justify-center"
+          data-aos="fade-left"
+        >
+          <img
+            src="/elena-marina/first.jpg"
+            alt="Elena y Marina"
             class="w-full h-full object-cover"
           />
         </div>
       </section>
 
       <!-- Divider -->
-      <hr class="max-w-xs mx-auto border-t border-gray-300" data-aos="fade-up"/>
+      <hr
+        class="max-w-xs mx-auto border-t border-gray-300"
+        data-aos="fade-up"
+      />
 
       <!-- Confirmation Link Section -->
       <section id="confirm" class="text-center" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-serif font-medium mb-8 text-gray-800">Confirmación de Asistencia</h2>
+        <h2
+          class="text-3xl md:text-4xl font-serif font-medium mb-8 text-gray-800"
+        >
+          Confirmación de Asistencia
+        </h2>
         <p class="text-lg mb-8 text-gray-600">
-			Por favor, avísanos si puedes asistir antes del 1 de Octubre para que podamos finalizar los preparativos.
+          Por favor, avísanos si puedes asistir antes del 1 de Octubre para que
+          podamos finalizar los preparativos.
         </p>
-        <a 
-          href="https://forms.gle/1n2fJh6cmFzFEK8q8" 
-          target="_blank" 
+        <a
+          href="https://forms.gle/1n2fJh6cmFzFEK8q8"
+          target="_blank"
           rel="noopener noreferrer"
           class="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-10 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
         >
-			Confirmar Asistencia
+          Confirmar Asistencia
         </a>
       </section>
 
       <!-- Divider -->
-      <hr class="max-w-xs mx-auto border-t border-gray-300" data-aos="fade-up"/>
+      <hr
+        class="max-w-xs mx-auto border-t border-gray-300"
+        data-aos="fade-up"
+      />
 
       <!-- Celebration Details Section -->
-      <section 
-        id="celebration" 
-        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-10" 
+      <section
+        id="celebration"
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-10"
         data-aos="fade-up"
       >
         {/* Text Column */}
-        <div class="md:order-1 text-center md:text-left"> {/* Center text on mobile, left on md+ */}
-          <h2 class="text-3xl md:text-4xl font-serif font-medium mb-6 text-gray-800">La Celebración</h2>
+        <div class="md:order-1 text-center md:text-left">
+          {/* Center text on mobile, left on md+ */}
+          <h2
+            class="text-3xl md:text-4xl font-serif font-medium mb-6 text-gray-800"
+          >
+            La Celebración
+          </h2>
           <p class="text-lg leading-relaxed mb-2">
-            <strong>Donde:</strong> <a href="/elena-marina/finca" class="text-gray-800 underline hover:text-gray-600">Finca Tagamanent</a>, Ctra. Montuïri - Sant Joan, Km.2, 07230, Mallorca
+            <strong>Donde:</strong>
+            <a
+              href="/elena-marina/finca"
+              class="text-gray-800 underline hover:text-gray-600"
+              >Finca Tagamanent</a
+            >, Ctra. Montuïri - Sant Joan, Km.2, 07230, Mallorca
           </p>
           <p class="text-lg leading-relaxed mb-6">
             <strong>Cuando:</strong> Sábado, 8 de Noviembre, 2025 a las 12:00
           </p>
           <p class="text-md text-gray-600">
-            Tanto la ceremonia como la fiesta serán en el mismo lugar. La vestimenta es formal pero si no tienes, no te preocupes, te daremos de comer aparte.
+            Tanto la ceremonia como la fiesta serán en el mismo lugar. La
+            vestimenta es formal pero si no tienes, no te preocupes, te daremos
+            de comer aparte.
           </p>
         </div>
         {/* Image Column - Replaced with Swiper Carousel */}
-        <div class="w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg md:order-2 relative" data-aos="fade-left">
+        <div
+          class="w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg md:order-2 relative"
+          data-aos="fade-left"
+        >
           {/* Swiper Container */}
           <div class="swiper celebration-swiper h-full">
             {/* Additional required wrapper */}
             <div class="swiper-wrapper">
               {/* Slides */}
               <div class="swiper-slide">
-                <img src="/elena-marina/tagamanent/altar.webp" alt="Lugar de la celebración - Imagen 1" class="w-full h-full object-cover" />
+                <img
+                  src="/elena-marina/tagamanent/altar.webp"
+                  alt="Lugar de la celebración - Imagen 1"
+                  class="w-full h-full object-cover"
+                />
               </div>
               <div class="swiper-slide">
-                <img src="/elena-marina/tagamanent/pati.webp" alt="Lugar de la celebración - Imagen 2" class="w-full h-full object-cover" />
+                <img
+                  src="/elena-marina/tagamanent/pati.webp"
+                  alt="Lugar de la celebración - Imagen 2"
+                  class="w-full h-full object-cover"
+                />
               </div>
               <div class="swiper-slide">
-                <img src="/elena-marina/tagamanent/exterior-vistes.jpg" alt="Lugar de la celebración - Imagen 3" class="w-full h-full object-cover" />
+                <img
+                  src="/elena-marina/tagamanent/exterior-vistes.jpg"
+                  alt="Lugar de la celebración - Imagen 3"
+                  class="w-full h-full object-cover"
+                />
               </div>
               <div class="swiper-slide">
-                <img src="/elena-marina/tagamanent/top.jpg" alt="Lugar de la celebración - Imagen 4" class="w-full h-full object-cover" />
+                <img
+                  src="/elena-marina/tagamanent/top.jpg"
+                  alt="Lugar de la celebración - Imagen 4"
+                  class="w-full h-full object-cover"
+                />
               </div>
               {/* Add more slides as needed */}
             </div>
@@ -129,32 +272,44 @@ const weddingDate = new Date('2025-11-08T12:00:00'); // November 8th, 6 PM - adj
       </section>
 
       <!-- Divider -->
-      <hr class="max-w-xs mx-auto border-t border-gray-300" data-aos="fade-up"/>
+      <hr
+        class="max-w-xs mx-auto border-t border-gray-300"
+        data-aos="fade-up"
+      />
 
       <!-- How to Get There Section - NEW -->
-      <section 
-        id="how-to-get-there" 
-        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-10" 
+      <section
+        id="how-to-get-there"
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-10"
         data-aos="fade-up"
       >
         {/* Text Column */}
-        <div class="md:order-1 text-center md:text-left"> 
-          <h2 class="text-3xl md:text-4xl font-serif font-medium mb-6 text-gray-800">Cómo Llegar a la Finca</h2>
+        <div class="md:order-1 text-center md:text-left">
+          <h2
+            class="text-3xl md:text-4xl font-serif font-medium mb-6 text-gray-800"
+          >
+            Cómo Llegar a la Finca
+          </h2>
           <p class="text-lg leading-relaxed mb-4 text-gray-600">
-            La Finca Tagamanent se encuentra en el corazón de Mallorca, en la carretera de Montuïri a Sant Joan, kilómetro 2.
+            La Finca Tagamanent se encuentra en el corazón de Mallorca, en la
+            carretera de Montuïri a Sant Joan, kilómetro 2.
           </p>
           <p class="text-lg leading-relaxed mb-4 text-gray-600">
-            <strong>La mejor opción es venir en coche.</strong> Hay aparcamiento disponible en la finca. Si vienes desde Palma, calcula unos 30-40 minutos de trayecto.
+            <strong>La mejor opción es venir en coche.</strong> Hay aparcamiento
+            disponible en la finca. Si vienes desde Palma, calcula unos 30-40 minutos
+            de trayecto.
           </p>
           <p class="text-lg leading-relaxed mb-4 text-gray-600">
-            También proporcionaremos transporte desde Palma y el Arenal a la finca.
+            También proporcionaremos transporte desde Palma y el Arenal a la
+            finca.
           </p>
           <p class="text-lg leading-relaxed mb-6 text-gray-600">
-            Puedes usar el mapa interactivo para obtener direcciones exactas desde tu ubicación. ¡Nos vemos allí!
+            Puedes usar el mapa interactivo para obtener direcciones exactas
+            desde tu ubicación. ¡Nos vemos allí!
           </p>
-           <a 
-            href="https://www.google.com/maps/d/u/0/edit?mid=1mFaflGQZwGYcSDvJFgUF7imNGFLgGAU&usp=sharing" 
-            target="_blank" 
+          <a
+            href="https://www.google.com/maps/d/u/0/edit?mid=1mFaflGQZwGYcSDvJFgUF7imNGFLgGAU&usp=sharing"
+            target="_blank"
             rel="noopener noreferrer"
             class="inline-block text-blue-600 hover:underline font-medium"
           >
@@ -162,41 +317,62 @@ const weddingDate = new Date('2025-11-08T12:00:00'); // November 8th, 6 PM - adj
           </a>
         </div>
         {/* Map Column */}
-        <div class="w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-lg md:order-2 relative" data-aos="fade-left">
-          <iframe src="https://www.google.com/maps/d/embed?mid=1mFaflGQZwGYcSDvJFgUF7imNGFLgGAU&ehbc=2E312F&noprof=1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación de Finca Tagamanent"></iframe>
+        <div
+          class="w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-lg md:order-2 relative"
+          data-aos="fade-left"
+        >
+          <iframe
+            src="https://www.google.com/maps/d/embed?mid=1mFaflGQZwGYcSDvJFgUF7imNGFLgGAU&ehbc=2E312F&noprof=1"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de ubicación de Finca Tagamanent"></iframe>
         </div>
       </section>
 
-
-       <!-- Divider -->
-      <hr class="max-w-xs mx-auto border-t border-gray-300" data-aos="fade-up"/>
+      <!-- Divider -->
+      <hr
+        class="max-w-xs mx-auto border-t border-gray-300"
+        data-aos="fade-up"
+      />
 
       <!-- Recommendations Link Section -->
-      <section 
-        id="recommendations" 
-        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-10" 
+      <section
+        id="recommendations"
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-10"
         data-aos="fade-up"
       >
         {/* Text & Buttons Column */}
-        <div class="md:order-2 text-center md:text-left"> 
-          <h2 class="text-3xl md:text-4xl font-serif font-medium mb-6 text-gray-800">Viaje y Alojamiento</h2>
+        <div class="md:order-2 text-center md:text-left">
+          <h2
+            class="text-3xl md:text-4xl font-serif font-medium mb-6 text-gray-800"
+          >
+            Viaje y Alojamiento
+          </h2>
           <p class="text-lg mb-8 text-gray-600">
-            ¿Necesitas recomendaciones de lugares donde alojarte o cosas que hacer cerca? Para moverte por la isla, te recomendamos alquilar un coche.
+            ¿Necesitas recomendaciones de lugares donde alojarte o cosas que
+            hacer cerca? Para moverte por la isla, te recomendamos alquilar un
+            coche.
           </p>
-          <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-            <a 
+          <div
+            class="flex flex-col sm:flex-row justify-center md:justify-start gap-4"
+          >
+            <a
               href="/elena-marina/accommodation"
               class="inline-block border-2 border-gray-800 hover:bg-gray-800 hover:text-white text-gray-800 font-semibold py-3 px-6 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
             >
               Alojamiento
             </a>
-            <a 
+            <a
               href="/elena-marina/car-rental"
               class="inline-block border-2 border-blue-600 hover:bg-blue-600 hover:text-white text-blue-600 font-semibold py-3 px-6 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
             >
               Alquilar Coche
             </a>
-            <a 
+            <a
               href="/elena-marina/recommendations"
               class="inline-block border-2 border-gray-500 hover:bg-gray-500 hover:text-white text-gray-500 font-semibold py-3 px-6 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
             >
@@ -205,21 +381,23 @@ const weddingDate = new Date('2025-11-08T12:00:00'); // November 8th, 6 PM - adj
           </div>
         </div>
         {/* Image Column */}
-        <div class="w-full h-64 md:h-100 rounded-lg overflow-hidden shadow-lg md:order-1 relative" data-aos="fade-right">
-          <img 
-            src="/elena-marina/avion.jpeg" 
-            alt="Avión volando sobre nubes" 
+        <div
+          class="w-full h-64 md:h-100 rounded-lg overflow-hidden shadow-lg md:order-1 relative"
+          data-aos="fade-right"
+        >
+          <img
+            src="/elena-marina/avion.jpeg"
+            alt="Avión volando sobre nubes"
             class="w-full h-full object-cover object-[center_20%]"
           />
         </div>
       </section>
-      
     </div>
   </main>
 
-  <!-- Simple Countdown Script -->	
-   <script define:vars={{ weddingDate }}>
-    const countdownElement = document.getElementById('countdown');
+  <!-- Simple Countdown Script -->
+  <script define:vars={{ weddingDate }}>
+    const countdownElement = document.getElementById("countdown");
     const targetDate = new Date(weddingDate).getTime();
 
     function updateCountdown() {
@@ -233,7 +411,9 @@ const weddingDate = new Date('2025-11-08T12:00:00'); // November 8th, 6 PM - adj
       }
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
@@ -247,33 +427,59 @@ const weddingDate = new Date('2025-11-08T12:00:00'); // November 8th, 6 PM - adj
   <!-- Swiper Initialization Script -->
   <script>
     // Import Swiper and modules
-    import Swiper from 'swiper';
-    import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+    import Swiper from "swiper";
+    import { Navigation, Pagination, Autoplay } from "swiper/modules";
     // Import Swiper styles (important!)
-    import 'swiper/css';
-    import 'swiper/css/navigation';
-    import 'swiper/css/pagination';
+    import "swiper/css";
+    import "swiper/css/navigation";
+    import "swiper/css/pagination";
 
-    const swiper = new Swiper('.celebration-swiper', {
+    const swiper = new Swiper(".celebration-swiper", {
       // Use necessary modules
       modules: [Navigation, Pagination, Autoplay],
       // Optional parameters
       loop: true,
       autoplay: {
         delay: 4000, // Delay between transitions (in ms)
-        disableOnInteraction: false, // Autoplay will not be disabled after user interactions 
+        disableOnInteraction: false, // Autoplay will not be disabled after user interactions
       },
       // If we need pagination
       pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
         clickable: true,
       },
       // Navigation arrows
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
     });
   </script>
 
+  <!-- Add this before the closing </Layout> tag -->
+  <script>
+    // Tab functionality
+    document.addEventListener("DOMContentLoaded", function () {
+      const tabButtons = document.querySelectorAll(".tab-button");
+      const tabPanes = document.querySelectorAll(".tab-pane");
+
+      tabButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Remove active classes
+          tabButtons.forEach((btn) => {
+            btn.classList.remove("active", "border-gray-800", "text-gray-800");
+            btn.classList.add("text-gray-500", "border-transparent");
+          });
+          tabPanes.forEach((pane) => pane.classList.add("hidden"));
+
+          // Add active classes
+          button.classList.add("active", "border-gray-800", "text-gray-800");
+          button.classList.remove("text-gray-500", "border-transparent");
+
+          const tabId = button.getAttribute("data-tab");
+          document.getElementById(tabId).classList.remove("hidden");
+        });
+      });
+    });
+  </script>
 </Layout>
