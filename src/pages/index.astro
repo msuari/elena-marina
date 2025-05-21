@@ -475,9 +475,13 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
           // Add active classes
           button.classList.add("active", "border-gray-800", "text-gray-800");
           button.classList.remove("text-gray-500", "border-transparent");
-
           const tabId = button.getAttribute("data-tab");
-          document.getElementById(tabId).classList.remove("hidden");
+          if (tabId) {
+            const tabElement = document.getElementById(tabId);
+            if (tabElement) {
+              tabElement.classList.remove("hidden");
+            }
+          }
         });
       });
     });
