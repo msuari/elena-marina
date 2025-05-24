@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Font Family Definitions */
+.font-adobe-caslon {
+  font-family: "adobe-caslon-pro", serif;
+  font-style: italic;
+}
+
 /* Swiper Customizations */
 .celebration-swiper {
   --swiper-navigation-color: #ffffff; /* Set arrows to white */
