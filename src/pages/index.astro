@@ -6,7 +6,7 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
 ---
 
 <Layout title="Elena & Marina's Wedding">
-  <main class="bg-white text-gray-700 font-sans antialiased">
+  <main class="bg-white text-gray-700 font-gambetta antialiased">
     <!-- Landing Section: Big Photo & Countdown -->
     <section
       class="relative h-screen flex items-center justify-end text-right text-white overflow-hidden pr-10 md:pr-20"
@@ -25,18 +25,88 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
         data-aos-delay="200"
       >
         <h1
-          class="text-5xl md:text-7xl font-serif font-medium mb-4 text-white-900"
+          class="text-5xl md:text-7xl font-stardom font-medium mb-4 text-white-900"
         >
           Elena & Marina
         </h1>
         <!-- <p class="text-2xl md:text-3xl mb-5 font-serif text-white-800">¡Nos casamos!</p> -->
-        <p class="text-4xl font-serif text-white-800">8 de Noviembre 2025</p>
+        <p class="text-4xl font-stardom text-white-800">8 de Noviembre 2025</p>
         <!-- Countdown Component -->
         <div
           id="countdown"
-          class="text-xl font-serif tracking-wider mb-2 text-white-900"
+          class="text-xl font-stardom tracking-wider mb-2 text-white-900"
         >
           Cargando cuenta atrás...
+        </div>
+      </div>
+    </section>
+
+    <!-- Three Vertical Sections -->
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <!-- Celebration Section -->
+          <div
+            class="flex flex-col items-center md:border-r border-gray-200"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h3 class="text-3xl font-gambetta-medium mb-4 text-gray-800">
+              ¿Donde?
+            </h3>
+            <p class="text-2xl text-gray-800">Finca</p>
+            <p class="text-2xl text-gray-800">Tagamanent</p>
+            <p class="text-m text-gray-600 mt-2">Montuïri</p>
+            <p class="text-m text-gray-600">
+              <a
+                href="https://www.google.com/maps/d/u/0/edit?mid=1mFaflGQZwGYcSDvJFgUF7imNGFLgGAU&usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-800 hover:text-gray-600"
+                >Ctra. Montuïri - Sant Joan, Km.2</a
+              >
+            </p>
+          </div>
+
+          <!-- Date Section -->
+          <div
+            class="flex flex-col items-center md:border-r border-gray-200"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h3 class="text-3xl font-gambetta-medium mb-4 text-gray-800">
+              ¿Cuando?
+            </h3>
+            <div class="flex flex-col items-center">
+              <span class="text-xl text-gray-600">Día</span>
+              <span class="text-6xl font-gambetta-medium text-gray-800">8</span>
+              <span class="text-xl text-gray-600">Noviembre</span>
+            </div>
+          </div>
+
+          <!-- Confirm Section -->
+          <div
+            class="flex flex-col items-center"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <h3 class="text-3xl font-gambetta-medium mb-4 text-gray-800">
+              Confirmar
+            </h3>
+            <p class="text-lg text-gray-600 mb-4">
+              Por favor, avísanos si puedes asistir
+              <br />
+              antes del 1 de Septiembre
+            </p>
+            <a
+              href="https://forms.gle/1n2fJh6cmFzFEK8q8"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-105"
+            >
+              Confirmar asistencia
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -46,9 +116,9 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
       <!-- Couple Description Section -->
 
       <!-- Confirmation Link Section -->
-      <section id="confirm" class="text-center" data-aos="fade-up">
+      <!-- <section id="confirm" class="text-center" data-aos="fade-up">
         <h2
-          class="text-3xl pt-10 md:text-4xl font-serif font-medium mb-8 text-gray-800"
+          class="text-3xl pt-10 md:text-4xl font-stardom font-medium mb-8 text-gray-800"
         >
           Confirmación de asistencia
         </h2>
@@ -64,11 +134,11 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
         >
           Confirmar asistencia
         </a>
-      </section>
+      </section> -->
 
       <!-- Divider -->
       <hr
-        class="max-w-xs mx-auto border-t border-gray-300"
+        class="max-w-2xs mx-auto border-t border-gray-300"
         data-aos="fade-up"
       />
 
@@ -82,7 +152,7 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
         <div class="md:order-1 text-center md:text-left">
           {/* Center text on mobile, left on md+ */}
           <h2
-            class="text-3xl md:text-4xl font-serif font-medium mb-6 text-gray-800"
+            class="text-3xl md:text-4xl font-stardom font-medium mb-6 text-gray-800"
           >
             La celebración
           </h2>
@@ -167,7 +237,7 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
         {/* Text Column */}
         <div class="md:order-1 text-center md:text-left">
           <h2
-            class="text-3xl md:text-4xl font-serif font-medium mb-6 text-gray-800"
+            class="text-3xl md:text-4xl font-stardom font-medium mb-6 text-gray-800"
           >
             Cómo llegar
           </h2>
@@ -231,7 +301,7 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
         {/* Text & Buttons Column */}
         <div class="md:order-2 text-center md:text-left">
           <h2
-            class="text-3xl md:text-4xl font-serif font-medium mb-6 text-gray-800"
+            class="text-3xl md:text-4xl font-stardom font-medium mb-6 text-gray-800"
           >
             Viaje y alojamiento
           </h2>

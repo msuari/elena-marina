@@ -1,9 +1,37 @@
 @import "tailwindcss";
+@import "../styles/stardom.css";
+@import "../styles/switzer.css";
+@import "../styles/gambetta.css";
 
 /* Font Family Definitions */
+@font-face {
+  font-family: 'Stardom-Regular';
+  src: url('/fonts/stardom/Stardom-Regular.woff2') format('woff2'),
+       url('/fonts/stardom/Stardom-Regular.woff') format('woff'),
+       url('/fonts/stardom/Stardom-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
 .font-adobe-caslon {
   font-family: "adobe-caslon-pro", serif;
   font-style: italic;
+}
+
+/* .font-stardom {
+  font-family: 'Stardom-Regular', serif;
+} */
+
+/* .font-stardom {
+  font-family: 'Switzer-Light', serif;
+} */
+.font-gambetta{
+  font-family: 'Gambetta-Regular', serif;
+}
+
+.font-gambetta-medium{
+  font-family: 'Gambetta-Medium', serif;
 }
 
 /* Swiper Customizations */
