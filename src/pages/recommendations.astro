@@ -103,6 +103,38 @@ const recommendations = [
   // Food: Palma
   {
     category: "Comer: Palma",
+    title: "Vida Meva",
+    description:
+      "Restaurante de menú con cocina mediterránea y moderna en el cento de Palma. Hay que reservar. Que pedir: cualquier plato del menú.",
+    imageSrc: "/elena-marina/recommendations/vida-meva.jpg",
+    link: "https://maps.app.goo.gl/cEujYtx3mSDPtC3W8",
+  },
+  {
+    category: "Comer: Palma",
+    title: "Restaurante Azabache",
+    description:
+      "Cocina clasica en la zona de Santa Catalina en Palma. Que pedir: ensaladilla y tortilla de patatas.",
+    imageSrc: "/elena-marina/recommendations/azabache.jpg",
+    link: "https://maps.app.goo.gl/fhMHLfqQpvEqzD2U6",
+  },
+  {
+    category: "Comer: Pollença",
+    title: "Celler La Parra",
+    description:
+      "Restaurante tradicional con ambiente rústico y cocina local el puerto de Pollença. Que pedir: paella, fideuà y frit mallorquí.",
+    imageSrc: "/elena-marina/recommendations/la-parra.jpg",
+    link: "https://maps.app.goo.gl/Z95uyqP42oiJrFhaA",
+  },
+  {
+    category: "Comer: Sencelles",
+    title: "Molico",
+    description:
+      "Restaurante con cocina fusión mediterránea y terraza con vistas a la Tramuntana en Sencelles. Que pedir: berenjena a la brasa.",
+    imageSrc: "/elena-marina/recommendations/sencelles.jpg",
+    link: "https://maps.app.goo.gl/wmhMrQfWXawVGT8K9",
+  },
+  {
+    category: "Comer: Palma",
     title: "Bar España / Molta Barra / Bar Flexas",
     description: "Tapas auténticas y buen ambiente (zona centro).",
     imageSrc: "/elena-marina/recommendations/tapas-palma.jpg",
@@ -116,13 +148,13 @@ const recommendations = [
     link: "https://caneduardo.com/",
   },
   {
-    category: "Comer: Palma",
+    category: "Desayunar y merendar: Palma",
     title: "Ca'n Joan de s'Aigo",
-    description: "Cafetería con las mejores ensaimadas de Mallorca.",
+    description:
+      "Cafetería con las mejores ensaimadas de Mallorca. Que pedir: ensaimada, cuarto y chocolate con nata.",
     imageSrc: "/elena-marina/recommendations/can-joan.jpg",
     link: "https://maps.app.goo.gl/DfmiCtNQ4y2ojHi89",
   },
-  // Food: Sierra/Other
   {
     category: "Comer: Sierra",
     title: "Ca's Patró March (Cala Deià)",
@@ -136,29 +168,7 @@ const recommendations = [
     description: "Muchas opciones, desde paellas a cocina más moderna.",
     imageSrc: "/elena-marina/recommendations/restaurante-soller.jpg",
     link: "https://www.google.com/maps/search/restaurantes+en+soller",
-  }, // Search link example
-  {
-    category: "Comer: Otros",
-    title: "Cellers (Inca, Sineu...)",
-    description:
-      "Restaurantes tradicionales para probar frito mallorquín, sopas mallorquinas, etc.",
-    imageSrc: "/elena-marina/recommendations/sencelles.jpg",
-    link: "https://www.google.com/maps/search/celler+mallorca",
-  }, // Search link example
-  {
-    category: "Comer: Imprescindibles",
-    title: "Ensaimada",
-    description: "Probar en Forn de Sant Joan o Can Joan de s'Aigo (Palma).",
-    imageSrc: "/elena-marina/recommendations/ensaimada.jpg",
-    link: "https://canjoandesaigo.com/",
-  }, // Link to one bakery example
-  {
-    category: "Comer: Imprescindibles",
-    title: "Sobrasada",
-    description: "Embutido típico mallorquín. ¡Pruébala!",
-    imageSrc: "/elena-marina/recommendations/sobrasada.jpg",
-    link: "https://maps.app.goo.gl/oKFBAUA8JxEq3xxb6",
-  }, // No specific link, maybe link to a recipe or info page?
+  },
 ];
 
 // Filter recommendations by category
@@ -168,8 +178,10 @@ const day1Activities = recommendations.filter((r) =>
 const day2Activities = recommendations.filter((r) =>
   r.category.startsWith("Día 2"),
 );
-const foodPlaces = recommendations.filter((r) =>
-  r.category.startsWith("Comer"),
+const foodPlaces = recommendations.filter(
+  (r) =>
+    r.category.startsWith("Comer") ||
+    r.category.startsWith("Desayunar y merendar"),
 );
 
 // Helper function to get category color (optional styling)
