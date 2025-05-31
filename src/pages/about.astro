@@ -160,9 +160,15 @@ import Layout from "../layouts/Layout.astro";
                 button.classList.add("text-gray-800");
                 button.classList.remove("border-transparent");
                 button.classList.remove("text-gray-500");
-
                 const tabId = button.getAttribute("data-tab");
-                document.getElementById(tabId).classList.remove("hidden");
+                if (tabId) {
+                    // Check if tabId exists
+                    const tabElement = document.getElementById(tabId);
+                    if (tabElement) {
+                        // Check if element exists
+                        tabElement.classList.remove("hidden");
+                    }
+                }
             });
         });
     </script>
