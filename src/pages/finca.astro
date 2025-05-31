@@ -1,5 +1,40 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+// Schedule data
+const scheduleItems = [
+  {
+    time: "11:00",
+    title: "Salida de los autobuses",
+    description:
+      "Los autobuses saldrán desde los puntos de recogida establecidos en Palma y el Arenal.",
+  },
+  {
+    time: "12:00",
+    title: "Inicio de la ceremonia",
+    description: "Comienza la ceremonia en el jardín de la finca.",
+  },
+  {
+    time: "13:00",
+    title: "Aperitivos",
+    description: "Aperitivos y bebidas, y varias estaciones de comida.",
+  },
+  {
+    time: "15:00",
+    title: "Comida",
+    description: "Banquete en el salón principal de la finca.",
+  },
+  {
+    time: "17:00",
+    title: "Fiesta",
+    description: "Comienza la fiesta con música y baile.",
+  },
+  {
+    time: "22:00",
+    title: "Fin de fiesta",
+    description: "Los autobuses regresarán a los puntos de origen.",
+  },
+];
 ---
 
 <Layout title="Finca Tagamanent - Boda Elena & Marina">
@@ -12,29 +47,89 @@ import Layout from "../layouts/Layout.astro";
       >
         La celebración
       </h1>
-
-      {/* Video Section */}
-      <section class="mb-12 md:mb-16" data-aos="fade-down">
-        <div
-          class="aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-xl bg-gray-300"
+      {/* How to Get There Section */}
+      <section class="max-w-3xl mx-auto mb-12 md:mb-16" data-aos="fade-up">
+        <h2
+          class="text-2xl md:text-3xl font-gambetta-medium font-medium mb-6 text-gray-800 text-center"
         >
-          {/* Replace with your video embed code (e.g., YouTube iframe) */}
-          <iframe
-            class="w-full h-full"
-            src="https://cdn0.bodas.net/emp/videos/9/1/6/198365_finca-taganament-161425509868495.mp4 "
-            title="Video sobre Finca Tagamanent"
-            frameborder="0"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
-          {/* --- OR --- */}
+          El lugar
+        </h2>
+        <hr
+          class="max-w-xs mx-auto border-t border-gray-300 mb-6"
+          data-aos="fade-up"
+        />
+        <div
+          class="space-y-4 text-center text-lg text-gray-500 text-center mb-8"
+        >
+          <p>El lugar de la celebración es la Finca Tagamanent.</p>
+          <p>
+            Nosotras proporcionaremos transporte desde <a
+              href="https://maps.app.goo.gl/iw2nj8qfU3T9Yrd86"
+              class="text-blue-600 hover:underline font-medium">Palma</a
+            > y <a
+              href="https://maps.app.goo.gl/zYzQcmF55UBAAFoB6"
+              class="text-blue-600 hover:underline font-medium">el Arenal</a
+            > a la finca. Podéis encontrar las paradas en el mapa de la boda.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg transition-shadow duration-300">
+          {/* Map Section */}
+          <div class="w-full h-96 md:h-[500px] mb-8">
+            <iframe
+              src="https://www.google.com/maps/d/embed?mid=1mFaflGQZwGYcSDvJFgUF7imNGFLgGAU&ehbc=2E312F&noprof=1"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Boda Elena & Marina"></iframe>
+          </div>
+        </div>
+      </section>
+
+      {/* Schedule Section */}
+      <section class="max-w-3xl mx-auto mb-12 md:mb-16" data-aos="fade-up">
+        <h2
+          class="text-2xl md:text-3xl font-gambetta-medium font-medium mb-6 text-gray-800 text-center"
+        >
+          El horario
+        </h2>
+        <hr
+          class="max-w-xs mx-auto border-t border-gray-300 mb-6"
+          data-aos="fade-up"
+        />
+        <p class="text-center text-gray-500 mb-8">
+          La ceremonia civil se celebrará el <strong
+            >8 de Noviembre de 2025</strong
+          > a las
+          <strong>12:00</strong> del mediodía en la Finca Tagamanent.
+        </p>
+        <div class="space-y-4">
           {
-            /* <video class="w-full h-full" controls>
-            <source src="/your-video.mp4" type="video/mp4">
-            Tu navegador no soporta vídeos HTML5.
-          </video> */
+            scheduleItems.map((item) => (
+              <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center gap-6">
+                  <div class="w-24 flex-shrink-0">
+                    <span class="text-2xl font-gambetta-medium text-gray-800">
+                      {item.time}
+                    </span>
+                  </div>
+                  <div class="flex-grow">
+                    <h3 class="text-xl font-gambetta-medium text-gray-800 mb-2">
+                      {item.title}
+                    </h3>
+                    <p class="text-gray-600">{item.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))
           }
         </div>
+        <p class="text-sm text-gray-500 text-center mb-8 italic pt-6">
+          * Los horarios son aproximados y pueden variar. Se irá confirmando en
+          los próximos meses.
+        </p>
       </section>
 
       {/* History Section */}
@@ -47,13 +142,25 @@ import Layout from "../layouts/Layout.astro";
         <h2
           class="text-3xl md:text-4xl font-gambetta-medium font-medium mb-6 text-gray-800"
         >
-          Sobre la finca
+          La finca
         </h2>
         <hr
           class="max-w-xs mx-auto border-t border-gray-300 mb-6"
           data-aos="fade-up"
         />
-        <!-- Divider -->
+        {/* Video Section */}
+        <div
+          class="aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-xl bg-gray-300"
+        >
+          <iframe
+            class="w-full h-full"
+            src="https://cdn0.bodas.net/emp/videos/9/1/6/198365_finca-taganament-161425509868495.mp4 "
+            title="Video sobre Finca Tagamanent"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
         <p>
           Vamos a celebrar nuestra boda en un lugar verdaderamente especial:
           Tagamanent, una finca familiar mallorquina con más de 600 años de
@@ -78,11 +185,10 @@ import Layout from "../layouts/Layout.astro";
         </p>
         <p>
           La finca cuenta con dos espacios diferenciados. En el interior, ideal
-          para el invierno, destacan dos majestuosos arcos de "besó d’ametla"
+          para el invierno, destacan dos majestuosos arcos de "besó d'ametla"
           que datan de la época árabe mallorquina. En el exterior, la finca
           cuenta con una terraza con unas vistas impresionantes.
         </p>
-        {/* Optional link to the Finca's website */}
         <p class="pt-4">
           Puedes encontrar más información sobre la finca en su <a
             href="https://www.tagamanent.net/"
