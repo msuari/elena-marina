@@ -52,20 +52,27 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
             data-aos-delay="100"
           >
             <h3 class="text-3xl font-gambetta-medium mb-4 text-gray-800">
-              ¿Donde?
+              ¿Dónde?
             </h3>
-            <p class="text-2xl text-gray-800">Finca</p>
-            <p class="text-2xl text-gray-800">Tagamanent</p>
-            <p class="text-m text-gray-600 mt-2">Montuïri</p>
-            <p class="text-m text-gray-600">
+            <p class="text-2xl text-gray-800">
               <a
-                href="https://www.google.com/maps/d/u/0/edit?mid=1mFaflGQZwGYcSDvJFgUF7imNGFLgGAU&usp=sharing"
+                href="https://maps.app.goo.gl/eCCLbHV9LLJ5pTAG9"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-800 hover:text-gray-600"
+                >Finca <br /> Tagamanent</a
+              >
+            </p>
+            <p class="text-m text-gray-600 mt-2">Montuïri - Mallorca</p>
+            <!-- <p class="text-m text-gray-600">
+              <a
+                href="https://maps.app.goo.gl/eCCLbHV9LLJ5pTAG9"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-gray-800 hover:text-gray-600"
                 >Ctra. Montuïri - Sant Joan, Km.2</a
               >
-            </p>
+            </p> -->
           </div>
 
           <!-- Date Section -->
@@ -75,12 +82,24 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
             data-aos-delay="200"
           >
             <h3 class="text-3xl font-gambetta-medium mb-4 text-gray-800">
-              ¿Cuando?
+              ¿Cuándo?
             </h3>
             <div class="flex flex-col items-center">
               <span class="text-xl text-gray-600">Día</span>
-              <span class="text-6xl font-gambetta-medium text-gray-800">8</span>
-              <span class="text-xl text-gray-600">Noviembre</span>
+              <a
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Elena+%26+Marina&dates=20251108T110000Z/20251108T210000Z&location=Finca+Tagamanent%2C+Ctra.+Montu%C3%AFri+-+Sant+Joan%2C+Km.2%2C+07230%2C+Montu%C3%AFri%2C+Illes+Balears&details=Te+esperamos+en+nuestra+boda+en+la+Finca+Tagamanent.+%0A%0APara+m%C3%A1s+informaci%C3%B3n%3A+https%3A%2F%2Fmsuari.github.io/elena-marina/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group cursor-pointer transition-transform duration-300 hover:scale-105"
+              >
+                <p
+                  class="text-6xl font-gambetta-medium text-gray-800 group-hover:text-gray-600"
+                >
+                  8
+                </p>
+                <p class="text-xl text-gray-600">Noviembre</p>
+              </a>
+              <!-- <span class="text-2xl text-gray-600">2025</span> -->
             </div>
           </div>
 
@@ -156,8 +175,14 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
           >
             La celebración
           </h2>
+          <p class="text-md text-gray-600">
+            La ceremonia, el banquete y la fiesta serán en la Finca Tagamanent.
+            La vestimenta es formal pero si no tienes, no te preocupes, te
+            daremos de comer aparte.
+          </p>
+          <br />
           <p class="text-lg leading-relaxed mb-2">
-            <strong>Donde:</strong>
+            <strong>Dónde:</strong>
             <a
               href="/elena-marina/finca"
               class="text-gray-800 underline hover:text-gray-600"
@@ -165,12 +190,7 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
             >, Ctra. Montuïri - Sant Joan, Km.2, 07230, Mallorca
           </p>
           <p class="text-lg leading-relaxed mb-6">
-            <strong>Cuando:</strong> Sábado, 8 de Noviembre, 2025 a las 12:00
-          </p>
-          <p class="text-md text-gray-600">
-            La ceremonia, el banquete y la fiesta serán en la Finca Tagamanent.
-            La vestimenta es formal pero si no tienes, no te preocupes, te
-            daremos de comer aparte.
+            <strong>Cuándo:</strong> Sábado, 8 de Noviembre, 2025 a las 12:00
           </p>
         </div>
         {/* Image Column - Replaced with Swiper Carousel */}
@@ -204,13 +224,13 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
                   class="w-full h-full object-cover"
                 />
               </div>
-              <div class="swiper-slide">
+              <!-- <div class="swiper-slide">
                 <img
                   src="/elena-marina/tagamanent/top.jpg"
                   alt="Lugar de la celebración - Imagen 4"
                   class="w-full h-full object-cover"
                 />
-              </div>
+              </div> -->
               {/* Add more slides as needed */}
             </div>
             {/* Pagination */}
@@ -249,10 +269,10 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
             <strong
               >Nosotras proporcionaremos transporte desde Palma y el Arenal a la
               finca.</strong
-            >
+            > Aun estamos pendientes de confirmar la ubicación exacta.
           </p>
           <p class="text-lg leading-relaxed mb-4 text-gray-600">
-            La mejor opción es venir en coche. Hay aparcamiento disponible en la
+            Otra opción es venir en coche. Hay aparcamiento disponible en la
             finca. Si vienes desde Palma, calcula unos 30-40 minutos de
             trayecto.
           </p>

@@ -12,7 +12,8 @@ const hotels = [
     locationLink: "https://maps.app.goo.gl/dNMeSr124YiGBXku9",
     price: "Desde 111€/noche",
     minNights: "min 3 noches",
-    discount: null
+    discount: null,
+    location: "Arenal"
   },
   {
     name: "Hotel Nou Baleares",
@@ -23,7 +24,8 @@ const hotels = [
     locationLink: "https://maps.app.goo.gl/Z2Q3PMgZ41B8M6VV8",
     price: "Desde 98€/noche",
     minNights: null,
-    discount: "19% dto. con código HAPPYNOU"
+    discount: "19% dto. con código HAPPYNOU",
+    location: "Palma"
   },
   {
     name: "Universal Hotel Neptuno",
@@ -34,7 +36,8 @@ const hotels = [
     locationLink: "https://maps.app.goo.gl/JMnhGC68sU2DXdoR7",
     price: "Desde 120€/noche",
     minNights: "min 2 noches",
-    discount: "5% dto. con código BODAE&M"
+    discount: "5% dto. con código BODAE&M",
+    location: "Arenal"
   },
   {
     name: "Cabot Tres Torres (Apartamentos)",
@@ -45,7 +48,8 @@ const hotels = [
     locationLink: "https://maps.app.goo.gl/LjNMMKfB1YEX3AYEA",
     price: "Desde 100€/noche",
     minNights: "Requiere contacto con nosotros",
-    discount: null
+    discount: null,
+    location: "Arenal"
   },
   {
     name: "Agroturismo Finca es Rafal de Montuïri",
@@ -56,7 +60,8 @@ const hotels = [
     locationLink: "https://maps.app.goo.gl/MYLkYPjyTareNv459",
     price: "Desde 118€/noche",
     minNights: null,
-    discount: null
+    discount: null,
+    location: "Montuïri"
   },
   {
     name: "Hipotels Gran Playa de Palma",
@@ -67,7 +72,8 @@ const hotels = [
     locationLink: "https://maps.app.goo.gl/sYrXeyFyRu8dEwxy7",
     price: "Desde 119€/noche",
     minNights: "min 4 noches",
-    discount: null
+    discount: null,
+    location: "Arenal"
   },
 ];
 ---
@@ -117,7 +123,7 @@ const hotels = [
                     rel="noopener noreferrer" 
                     class="flex-1 text-center bg-indigo-50 hover:bg-indigo-100 text-slate-800 text-sm font-medium py-1.5 px-3 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
                   >
-                    📍 Ver Mapa
+                    📍 {hotel.location}
                   </a>
                 </div>
               </div>
