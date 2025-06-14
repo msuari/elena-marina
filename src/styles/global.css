@@ -15,7 +15,7 @@
 }
 
 /* Swiper Customizations */
-.celebration-swiper {
+.celebration-swiper, .about-swiper {
   --swiper-navigation-color: #ffffff; /* Set arrows to white */
   --swiper-pagination-color: #ffffff; /* Set pagination bullets to white */
 
@@ -24,9 +24,9 @@
 }
 
 /* Adjust shadow for pagination bullets if needed */
-.celebration-swiper .swiper-pagination-bullet {
+.celebration-swiper .swiper-pagination-bullet, .about-swiper .swiper-pagination-bullet {
   /* Example: Adding a dark outline if bullets are hard to see */
-  /* box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3); */
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
 
 /* Adjust arrow size if needed */

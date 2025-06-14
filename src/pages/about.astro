@@ -123,23 +123,49 @@ import Layout from "../layouts/Layout.astro";
                 </div>
                 {/* Image Column */}
                 <div class="w-full md:order-2 relative" data-aos="fade-left">
-                    <figure class="w-full">
-                        <div
-                            class="h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
-                        >
-                            <img
-                                src="/elena-marina/first.jpg"
-                                alt="Elena y Marina"
-                                class="w-full h-full object-cover"
-                            />
+                    <div
+                        class="w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
+                    >
+                        {/* Swiper Container */}
+                        <div class="swiper about-swiper h-full">
+                            {/* Additional required wrapper */}
+                            <div class="swiper-wrapper">
+                                {/* Slides */}
+                                <div class="swiper-slide">
+                                    <img
+                                        src="/elena-marina/first.jpg"
+                                        alt="Elena y Marina"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img
+                                        src="/elena-marina/swing-bw.jpg"
+                                        alt="Elena y Marina"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img
+                                        src="/elena-marina/avion.jpeg"
+                                        alt="Elena y Marina"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+                            {/* Pagination */}
+                            <div class="swiper-pagination"></div>
+                            {/* Navigation buttons */}
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
-                        <figcaption
-                            class="text-center text-sm text-gray-500 mt-2 italic"
-                        >
-                            Elena y Marina. "Bar de los pajaritos". Barcelona,
-                            16 de Noviembre 2015
-                        </figcaption>
-                    </figure>
+                    </div>
+                    <!-- <figcaption
+                        class="text-center text-sm text-gray-500 mt-2 italic"
+                    >
+                        Elena y Marina. "Bar de los pajaritos". Barcelona, 16 de
+                        Noviembre 2015
+                    </figcaption> -->
                 </div>
             </section>
         </div>
@@ -178,6 +204,38 @@ import Layout from "../layouts/Layout.astro";
                     }
                 }
             });
+        });
+    </script>
+
+    <!-- Swiper Initialization Script -->
+    <script>
+        // Import Swiper and modules
+        import Swiper from "swiper";
+        import { Navigation, Pagination, Autoplay } from "swiper/modules";
+        // Import Swiper styles (important!)
+        import "swiper/css";
+        import "swiper/css/navigation";
+        import "swiper/css/pagination";
+
+        const swiper = new Swiper(".about-swiper", {
+            // Use necessary modules
+            modules: [Navigation, Pagination, Autoplay],
+            // Optional parameters
+            loop: true,
+            autoplay: {
+                delay: 4000, // Delay between transitions (in ms)
+                disableOnInteraction: false, // Autoplay will not be disabled after user interactions
+            },
+            // If we need pagination
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            // Navigation arrows
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
         });
     </script>
 </Layout>
