@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 
 // Wedding details
-const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adjust time if needed
+const weddingDate = new Date("2025-11-08T11:30:00"); // November 8th, 6 PM - adjust time if needed
 ---
 
 <Layout title="Elena & Marina's Wedding">
@@ -54,7 +54,7 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
             <h3 class="text-3xl font-gambetta-medium mb-4 text-gray-800">
               ¿Dónde?
             </h3>
-            <p class="text-2xl text-gray-800">
+            <p class="text-2xl text-gray-800 mt-2">
               <a
                 href="https://maps.app.goo.gl/eCCLbHV9LLJ5pTAG9"
                 target="_blank"
@@ -63,7 +63,7 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
                 >Finca <br /> Tagamanent</a
               >
             </p>
-            <p class="text-m text-gray-600 mt-2">Montuïri - Mallorca</p>
+            <p class="text-m text-gray-600 mt-4">Montuïri - Mallorca</p>
             <!-- <p class="text-m text-gray-600">
               <a
                 href="https://maps.app.goo.gl/eCCLbHV9LLJ5pTAG9"
@@ -175,22 +175,31 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
           >
             La celebración
           </h2>
-          <p class="text-md text-gray-600">
-            La ceremonia, el banquete y la fiesta serán en la Finca Tagamanent.
-            La vestimenta es formal pero si no tienes, no te preocupes, te
-            daremos de comer aparte.
+          <p class="text-lg text-gray-600 leading-relaxed mb-4">
+            Queremos celebrar nuestra unión con vosotros como testigos, en un
+            lugar verdaderamente especial, se trata de la <strong
+              >Finca Tagamanent</strong
+            >, una finca familiar mallorquina con más de 600 años de historia.
           </p>
-          <br />
-          <p class="text-lg leading-relaxed mb-2">
-            <strong>Dónde:</strong>
-            <a
-              href="/elena-marina/finca"
-              class="text-gray-800 underline hover:text-gray-600"
-              >Finca Tagamanent</a
-            >, Ctra. Montuïri - Sant Joan, Km.2, 07230, Mallorca
+          <p class="text-lg text-gray-600 leading-relaxed mb-4">
+            Habrá <strong>autobuses</strong> disponibles para ir <strong
+              >desde Palma/Arenal a la finca</strong
+            > y de la finca a Palma/Arenal. Los autobuses volverán en dos turnos:
+            después de la comida y después de la fiesta. Los horarios exactos quedan
+            pendientes de confirmación.<br />
+            Otra opción es venir en <a
+              href="/elena-marina/car-rental"
+              class="text-gray-800 underline hover:text-gray-600">coche</a
+            >, ya que hay aparcamiento disponible.
           </p>
-          <p class="text-lg leading-relaxed mb-6">
-            <strong>Cuándo:</strong> Sábado, 8 de Noviembre, 2025 a las 12:00
+          <p class="text-lg text-gray-600 leading-relaxed mb-4">
+            Primero tendrá lugar la ceremonia civil, después un aperitivo
+            durante el que disfrutaremos de las vistas a las dos sierras que
+            enmarcan la isla: la Sierra de Tramuntana y la de Llevant. Luego
+            vendrá la comida y finalmente la fiesta!
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed mb-4">
+            Código de vestimenta: formal.
           </p>
         </div>
         {/* Image Column - Replaced with Swiper Carousel */}
@@ -266,6 +275,17 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
             carretera de Montuïri a Sant Joan, kilómetro 2.
           </p>
           <p class="text-lg leading-relaxed mb-4 text-gray-600">
+            Podéis consultar el mapa interactivo para obtener direcciones
+            exactas desde tu ubicación. ¡Nos vemos allí!
+          </p>
+          <p class="text-lg leading-relaxed mb-4 text-gray-600">
+            Las paradas de los autobuses así como los horarios se confirmarán.
+          </p>
+          <!-- <p class="text-lg leading-relaxed mb-4 text-gray-600">
+            La Finca Tagamanent se encuentra en el corazón de Mallorca, en la
+            carretera de Montuïri a Sant Joan, kilómetro 2.
+          </p>
+          <p class="text-lg leading-relaxed mb-4 text-gray-600">
             <strong
               >Nosotras proporcionaremos transporte desde Palma y el Arenal a la
               finca.</strong
@@ -279,12 +299,12 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
           <p class="text-lg leading-relaxed mb-6 text-gray-600">
             Puedes usar el mapa interactivo para obtener direcciones exactas
             desde tu ubicación. ¡Nos vemos allí!
-          </p>
+          </p> -->
           <a
             href="https://www.google.com/maps/d/u/0/edit?mid=1mFaflGQZwGYcSDvJFgUF7imNGFLgGAU&usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block text-blue-600 hover:underline font-medium"
+            class="inline-block text-gray-800 underline hover:text-gray-500 font-medium"
           >
             Abrir en Google Maps →
           </a>
@@ -335,19 +355,19 @@ const weddingDate = new Date("2025-11-08T12:00:00"); // November 8th, 6 PM - adj
           >
             <a
               href="/elena-marina/accommodation"
-              class="inline-block border-2 border-gray-800 hover:bg-gray-800 hover:text-white text-gray-800 font-semibold py-3 px-6 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
+              class="inline-block border-2 border-slate-700 hover:bg-slate-700 hover:text-white text-slate-700 font-semibold py-3 px-6 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
             >
               Alojamiento
             </a>
             <a
               href="/elena-marina/car-rental"
-              class="inline-block border-2 border-blue-600 hover:bg-blue-600 hover:text-white text-blue-600 font-semibold py-3 px-6 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
+              class="inline-block border-2 border-gray-600 hover:bg-gray-600 hover:text-white text-gray-600 font-semibold py-3 px-6 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
             >
               Alquilar Coche
             </a>
             <a
               href="/elena-marina/recommendations"
-              class="inline-block border-2 border-gray-500 hover:bg-gray-500 hover:text-white text-gray-500 font-semibold py-3 px-6 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
+              class="inline-block border-2 border-zinc-500 hover:bg-zinc-500 hover:text-white text-zinc-500 font-semibold py-3 px-6 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
             >
               Qué Hacer
             </a>
