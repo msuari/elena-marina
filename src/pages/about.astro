@@ -1,5 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const slides = [
+    {
+        src: "/elena-marina/first.jpg",
+        alt: "Elena y Marina",
+    },
+    {
+        src: "/elena-marina/about/selah-sue.jpg",
+        alt: "Elena y Marina en el concierto de Selah Sue",
+    },
+    {
+        src: "/elena-marina/about/futbol-hate.jpg",
+        alt: "Elena y Marina",
+    },
+    {
+        src: "/elena-marina/about/huesca.jpg",
+        alt: "Elena y Marina en Huesca",
+    },
+    {
+        src: "/elena-marina/about/uffizi.jpg",
+        alt: "Elena y Marina en los Uffizi",
+    },
+    {
+        src: "/elena-marina/about/paddle.jpg",
+        alt: "Elena y Marina en paddle",
+    },
+];
 ---
 
 <Layout title="About Us - Elena & Marina's Wedding">
@@ -131,27 +158,17 @@ import Layout from "../layouts/Layout.astro";
                             {/* Additional required wrapper */}
                             <div class="swiper-wrapper">
                                 {/* Slides */}
-                                <div class="swiper-slide">
-                                    <img
-                                        src="/elena-marina/first.jpg"
-                                        alt="Elena y Marina"
-                                        class="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img
-                                        src="/elena-marina/swing-bw.jpg"
-                                        alt="Elena y Marina"
-                                        class="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img
-                                        src="/elena-marina/avion.jpeg"
-                                        alt="Elena y Marina"
-                                        class="w-full h-full object-cover"
-                                    />
-                                </div>
+                                {
+                                    slides.map((slide) => (
+                                        <div class="swiper-slide">
+                                            <img
+                                                src={slide.src}
+                                                alt={slide.alt}
+                                                class="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    ))
+                                }
                             </div>
                             {/* Pagination */}
                             <div class="swiper-pagination"></div>
@@ -211,7 +228,7 @@ import Layout from "../layouts/Layout.astro";
     <script>
         // Import Swiper and modules
         import Swiper from "swiper";
-        import { Navigation, Pagination, Autoplay } from "swiper/modules";
+        import { Navigation, Pagination } from "swiper/modules";
         // Import Swiper styles (important!)
         import "swiper/css";
         import "swiper/css/navigation";
@@ -219,13 +236,9 @@ import Layout from "../layouts/Layout.astro";
 
         const swiper = new Swiper(".about-swiper", {
             // Use necessary modules
-            modules: [Navigation, Pagination, Autoplay],
+            modules: [Navigation, Pagination],
             // Optional parameters
             loop: true,
-            autoplay: {
-                delay: 4000, // Delay between transitions (in ms)
-                disableOnInteraction: false, // Autoplay will not be disabled after user interactions
-            },
             // If we need pagination
             pagination: {
                 el: ".swiper-pagination",
