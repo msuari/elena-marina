@@ -4,6 +4,67 @@ import Layout from '../layouts/Layout.astro';
 // Placeholder Hotel Data (Replace with real details)
 const hotels = [
   {
+    name: "Grupotel Taurus Park",
+    description: "El mejor hotel calidad-precio. Para reservarlo tienes que enviar un correo a reservas@grupotel.com informando que vienes a nuestra boda. Si reservas antes del 30 de Septiembre hay un 5% de descuento adicional.",
+    address: "Edificio Gran Playa, Prolongación Carrer de las Canyes, 07600 Playa de Palma, Balearic Islands",
+    website: "mailto:reservas@grupotel.com",
+    imageSrc: "/elena-marina/accomodation/taurus-park.jpg",
+    locationLink: "Av. d'Amèrica, 7, Platja de Palma, 07600 Palma, Illes Balears",
+    price: "Desde 80€/noche",
+    minNights: "Requiere contacto con el hotel",
+    discount: "5% dto. reservas antes de Octubre",
+    location: "Arenal",
+    modalInfo: {
+      title: "Oferta Especial - Grupotel Taurus Park",
+      content: `
+        <div class="space-y-6">
+          <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+            <p class="text-blue-800 font-medium leading-relaxed">
+              Para reservar en el hotel con precio especial enviad un email a 
+              <a href="mailto:reservas.taurus@grupotel.com" class="text-blue-600 hover:text-blue-800 underline font-semibold">reservas.taurus@grupotel.com</a> 
+              informando de que la reserva está relacionada con la boda de Elena y Marina (8 de noviembre 2025).
+            </p>
+          </div>
+
+          <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+            <p class="text-green-800 font-medium">
+              🎉 <strong>Descuento especial:</strong> Si reservas y pagas antes del 30 de septiembre de 2025, el precio se reducirá un 5% adicional.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-semibold text-gray-800 mb-3 text-lg">La oferta es la siguiente:</h4>
+            <p class="text-gray-700 font-medium mb-4">Del 07.11.2025 al 09.11.2025</p>
+            
+            <div class="space-y-4">
+              <div class="border border-gray-200 rounded-lg p-4">
+                <h5 class="font-semibold text-gray-800 mb-2">Habitación doble</h5>
+                <ul class="text-gray-700 space-y-1">
+                  <li>• 2 adultos</li>
+                  <li>• Desayuno</li>
+                  <li class="font-semibold text-lg">Precio: 80.00€ por habitación / noche</li>
+                  <li class="text-sm text-gray-600">Recargo por media pensión - 15.00€ por persona / noche</li>
+                </ul>
+              </div>
+
+              <div class="border border-gray-200 rounded-lg p-4">
+                <h5 class="font-semibold text-gray-800 mb-2">Habitación doble individual</h5>
+                <ul class="text-gray-700 space-y-1">
+                  <li>• 1 adulto</li>
+                  <li>• Desayuno</li>
+                  <li class="font-semibold text-lg">Precio: 69.00€ por habitación / noche</li>
+                  <li class="text-sm text-gray-600">Recargo por media pensión - 15.00€ por persona / noche</li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="text-sm text-gray-600 mt-4 italic">Impuesto turístico no incluido</p>
+          </div>
+        </div>
+      `
+    }
+  },
+  {
     name: "Occidental Playa de Palma",
     description: "Situado en primera línea de playa, este hotel de 4 estrellas ofrece vistas espectaculares al mar Mediterráneo. Cuenta con piscina exterior, spa, gimnasio y restaurantes de alta calidad. Perfecto para una estancia relajante cerca de la playa.",
     address: "Avinguda de Fra Joan Llabrés, 16, Platja de Palma, 07600 Palma, Illes Balears",
@@ -109,14 +170,25 @@ const hotels = [
               <div class="text-sm text-gray-500 mt-auto">
                 <p class="mb-1">{hotel.address}</p>
                 <div class="flex justify-between items-center gap-2">
-                  <a 
-                    href={hotel.website} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    class="flex-1 text-center bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-medium py-1.5 px-3 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
-                  >
-                    🌐 Visitar Web
-                  </a>
+                  {hotel.modalInfo ? (
+                    <button 
+                      data-hotel-name={hotel.name}
+                      data-modal-title={hotel.modalInfo.title}
+                      data-modal-content={hotel.modalInfo.content}
+                      class="modal-trigger flex-1 text-center bg-blue-100 hover:bg-blue-200 text-blue-800 text-sm font-medium py-1.5 px-3 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
+                    >
+                      🔥 Ver Oferta
+                    </button>
+                  ) : (
+                    <a 
+                      href={hotel.website} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      class="flex-1 text-center bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-medium py-1.5 px-3 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
+                    >
+                      🌐 Visitar Web
+                    </a>
+                  )}
                   <a 
                     href={hotel.locationLink} 
                     target="_blank" 
@@ -142,5 +214,96 @@ const hotels = [
       </div>
       
     </div>
+
+    <!-- Modal -->
+    <div id="hotelModal" class="fixed inset-0 bg-opacity-50 bg-transparent z-50 hidden flex items-center justify-center p-4 border-4 border-gray-800">
+      <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl" id="modalContent">
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-2xl font-gambetta-medium font-medium text-gray-800" id="modalTitle"></h3>
+            <button 
+              id="modalCloseBtn"
+              class="text-gray-400 hover:text-gray-600 text-2xl font-bold leading-none"
+            >
+              ×
+            </button>
+          </div>
+          <div id="modalBody" class="text-gray-700"></div>
+          <div class="mt-6 flex justify-end">
+            <button 
+              id="modalCloseBtnBottom"
+              class="bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300 ease-in-out"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openModal(hotelName: string, title: string, content: string) {
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+        const hotelModal = document.getElementById('hotelModal');
+        
+        if (modalTitle && modalBody && hotelModal) {
+          modalTitle.textContent = title;
+          modalBody.innerHTML = content;
+          hotelModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function closeModal() {
+        const hotelModal = document.getElementById('hotelModal');
+        if (hotelModal) {
+          hotelModal.classList.add('hidden');
+          document.body.style.overflow = 'auto';
+        }
+      }
+
+      // Initialize modal functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        // Add click listeners to modal trigger buttons
+        const modalTriggers = document.querySelectorAll('.modal-trigger');
+        modalTriggers.forEach(button => {
+          button.addEventListener('click', function(this: HTMLElement) {
+            const hotelName = this.getAttribute('data-hotel-name') || '';
+            const title = this.getAttribute('data-modal-title') || '';
+            const content = this.getAttribute('data-modal-content') || '';
+            openModal(hotelName, title, content);
+          });
+        });
+
+        // Add click listeners to modal close buttons
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        const modalCloseBtnBottom = document.getElementById('modalCloseBtnBottom');
+        
+        if (modalCloseBtn) {
+          modalCloseBtn.addEventListener('click', closeModal);
+        }
+        if (modalCloseBtnBottom) {
+          modalCloseBtnBottom.addEventListener('click', closeModal);
+        }
+
+        // Close modal when clicking outside
+        const hotelModal = document.getElementById('hotelModal');
+        if (hotelModal) {
+          hotelModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+              closeModal();
+            }
+          });
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            closeModal();
+          }
+        });
+      });
+    </script>
   </main>
 </Layout> 
