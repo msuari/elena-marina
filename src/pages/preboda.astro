@@ -1,0 +1,292 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Preboda event details
+const prebodaDate = new Date("2025-11-07T19:30:00"); // November 7th, 7:30 PM
+const bingoTime = new Date("2025-11-07T21:00:00"); // Bingo at 9 PM
+---
+
+<Layout title="Preboda - Boda Elena & Marina">
+  <main class="bg-white text-gray-700 font-gambetta antialiased min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 bg-gray-500">
+        <img
+          src="/elena-marina/swing-color.jpg"
+          alt="Elena and Marina"
+          class="w-full h-full object-cover opacity-80"
+        />
+      </div>
+      <div
+        class="relative z-10 p-8 md:p-12 rounded-lg"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <h1 class="text-5xl md:text-9xl font-stardom font-medium mb-4 text-white drop-shadow-2xl" style="text-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2);">
+          Preboda
+        </h1>
+        <p class="text-3xl md:text-5xl font-stardom text-white mb-6 drop-shadow-2xl" style="text-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2);">7 de Noviembre 2025</p>
+        <p class="text-2xl md:text-4xl font-gambetta text-white mb-4 drop-shadow-2xl" style="text-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2);">Moltabarra Bar</p>
+        <p class="text-xl md:text-3xl font-gambetta text-white drop-shadow-2xl" style="text-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2);">19:30h</p>
+      </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <div class="container mx-auto py-16 px-6 space-y-14 md:space-y-16">
+      
+      <!-- Event Details Section -->
+      <section class="max-w-6xl mx-auto" data-aos="fade-up">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-stardom font-medium mb-6 text-gray-800">
+            ¡Celebremos junt@s!
+          </h2>
+          <p class="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+            El viernes 7 de noviembre os esperamos en el Moltabarra bar a partir de las 19:30h
+            para celebrar con tod@s vosotr@s nuestra última noche como solteras. Acompáñanos en nuestra primera fase de nervios e ilusión, una tarde en la que podremos brindar, cenar, bailar y todos los infinitivos que vuestra imaginación nos quiera regalar. 
+            Dejad el traje y el vestido en casa! <strong>Código de vestimenta: informal.</strong> La preboda se vive con ropa cómoda, guapura, y espíritu festivo!
+          </p>
+        </div>
+      </section>
+
+      <!-- Event Information Cards -->
+      <section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
+        <!-- When Card -->
+        <a
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Preboda%20Elena%20%26%20Marina&dates=20251107T183000Z/20251107T220000Z&details=Preboda%20en%20Bar%20Moltabarra%20-%20Bingo%20Musical%20a%20las%2021:00%0A%0ALink%20al%20lugar:%20https://maps.app.goo.gl/v7D7WaDQZmxgXsnb7&location=Bar%20Moltabarra%2C%20Palma%2C%20Mallorca"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer"
+        >
+          <div class="text-4xl mb-4">📅</div>
+          <h3 class="text-3xl md:text-4xl font-stardom font-medium mb-4 text-gray-800">
+            ¿Cuándo?
+          </h3>
+          <p class="text-lg text-gray-600 mb-2">7 de Noviembre 2025</p>
+          <p class="text-lg text-gray-600">19:30h</p>
+        </a>
+
+        <!-- Where Card -->
+        <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+          <div class="text-4xl mb-4">📍</div>
+          <h3 class="text-3xl md:text-4xl font-stardom font-medium mb-4 text-gray-800">
+            ¿Dónde?
+          </h3>
+          <a
+            href="https://maps.app.goo.gl/v7D7WaDQZmxgXsnb7"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium py-2 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
+          >
+          <p class="text-lg text-gray-600">Moltabarra Bar</p>
+          </a>
+        </div>
+
+        <!-- What Card -->
+        <div class="bg-white rounded-lg shadow-lg p-8 text-center md:col-span-2 lg:col-span-1">
+          <div class="text-4xl mb-4">🎵</div>
+          <h3 class="text-3xl md:text-4xl font-stardom font-medium mb-4 text-gray-800">
+            ¿Qué haremos?
+          </h3>
+          <p class="text-lg text-gray-600 mb-2">Bingo Musical</p>
+          <p class="text-lg text-gray-500">21:00h</p>
+        </div>
+      </section>
+
+      <!-- Horario Section -->
+      <section class="max-w-6xl mx-auto text-center mb-14 mt-10" data-aos="fade-up">
+        <div class="text-center">
+          <h2 class="text-3xl md:text-4xl font-stardom font-medium mb-6 text-gray-800">
+            Horario de la noche
+          </h2>
+          <div class="bg-white max-w-2xl mx-auto">
+            <div class="space-y-4 text-lg text-gray-600">
+              <p class="font-medium">19:30 - Llegada y bienvenida</p>
+              <p class="font-medium">21:00 - ¡Bingo Musical!</p>
+              <p class="font-medium">22:00 - Continuamos la fiesta</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bingo Musical Highlight -->
+      <section class="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12" data-aos="fade-up" style="box-shadow: 0 -8px 16px -4px rgba(0, 0, 0, 0.06), 0 -4px 8px -2px rgba(0, 0, 0, 0.03), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+        <div class="text-center">
+          <div class="text-6xl mb-6">🎶</div>
+          <h2 class="text-3xl md:text-4xl font-stardom font-medium mb-6 text-gray-800">
+            Bingo Musical
+          </h2>
+          <p class="text-xl text-gray-600 leading-relaxed mb-6"> 
+            Imagina un bingo de toda la vida pero con mucho más ritmo y probablemente más baile. En este bingo, los números son canciones y el azar suena a temazo.
+            Tú marcas en tu cartón las canciones que vayas reconociendo, gritas "¡BINGO!" cuando lo completas entero, y de paso te dejas la voz cantando el estribillo. </br>
+            Para l@s que canten línea o BINGO habrá premios sorpresa. 
+          </br></br>
+            <strong>Comenzará a las 21:00h.</strong></br></br> No hace falta saber de música, las canciones serán reconocidas por todas las generaciones y, si te animas, mueve el esqueleto!! 💃🕺
+          </p>
+          <p class="text-xl text-gray-600 leading-relaxed mb-6">
+            🐈‍⬛ El bingo musical tendrá fines benéficos para la Associació de Sencelles <a href="https://quinaanimalada.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline font-medium">"Quina Animalada"</a> 
+            que lucha por la defensa y protección de los derechos de los animales. Los cartones se podrán comprar en el bar a 1€.
+          </p>
+        </div>
+      </section>
+
+      <!-- Location Details -->
+      <section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center" data-aos="fade-up">
+        {/* Text Column */}
+        <div class="text-center md:text-left">
+          <h2 class="text-3xl md:text-4xl font-stardom font-medium mb-6 text-gray-800">
+            Moltabarra Bar
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-4">
+            Hemos elegido este bar por su ubicación céntrica. 
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            Aquí tienes la ruta para no perderte, cortesía de Google Maps y ¡nuestras ganas de verte!.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            Tu misión: llegar al bar. Tu ayuda: este enlace. ¡Nos vemos allí!
+          </p>
+          <a
+            href="https://maps.app.goo.gl/v7D7WaDQZmxgXsnb7"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            ¿Cómo llegar?
+          </a>
+        </div>
+        
+        {/* Bar Moltabarra Image */}
+        <div class="w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+          <img
+            src="/elena-marina/preboda/moltabarra.jpg"
+            alt="Moltabarra Bar"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </section>
+
+      <!-- How to Get There Section -->
+      <section class="max-w-6xl mx-auto" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-stardom font-medium mb-8 text-center text-gray-800">
+          ¿Cómo llegar?
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- From Hotel Taurus Park -->
+          <div class="bg-white rounded-lg shadow-lg p-6" style="box-shadow: 0 -8px 16px -4px rgba(0, 0, 0, 0.06), 0 -4px 8px -2px rgba(0, 0, 0, 0.03), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+            <h3 class="text-2xl md:text-2xl font-stardom font-medium mb-4 text-gray-800 flex items-center">
+              <span class="text-xl mr-3">🏨</span>
+              Desde el Arenal
+            </h3>
+            
+            <!-- Large separator -->
+            <hr class="border-gray-300 mb-6">
+            
+            <div class="space-y-4">
+              <div class="flex flex-col h-64">
+                <h4 class="font-gambetta-medium font-medium text-gray-800 mb-4 text-lg">🚗 Coche/Taxi</h4>
+                <p class="text-gray-600 text-lg mb-2">La opción más rápida y cómoda.</p>
+                <p class="text-gray-600 text-lg">
+                  <strong>Parking:</strong> Aparcar en el <a href="https://maps.app.goo.gl/Gz9ENgcDc26qqr4w8" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">parking de Sa Gerreria</a>, o en zona azul por los alrededores del distrito. 
+                  No se puede entrar en la zona del barrio antiguo (reservada a vecinos y zona de bajas emisiones). 
+                </p>
+                <div class="text-gray-600 text-lg space-y-1 mt-2">
+                  <p><strong>Taxi:</strong> <a href="https://alfa.taxitronic.com:9898/Home/index/239" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">Radio-Taxi Ciutat</a></p>
+                  <p><strong>Uber:</strong> <a href="https://www.uber.com/global/es-es/r/cities/palma-es-ib-es/?uclick_id=c90c71ba-48e3-4cbc-ab01-5c27c0f550a5" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">Uber Palma</a></p>
+                </div>
+              </div>
+              
+              <!-- Small separator -->
+              <hr class="border-gray-200 mb-6">
+              
+              <div class="flex flex-col h-42">
+                <h4 class="font-gambetta-medium font-medium text-gray-800 mb-4 text-lg">🚌 Autobús</h4>
+                <p class="text-gray-600 text-lg mb-2">Más económico pero tarda más tiempo.</p>
+                <div class="text-gray-600 text-lg space-y-1">
+                  <p><strong>Línea 23:</strong> Bajar en <a href="https://maps.app.goo.gl/gvZonopL1HtVkJvJ6" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">Gabriel Alomar</a>. A 6 minutos caminando.</p>
+                  <p><strong>Línea 31:</strong> Bajar en <a href="https://maps.app.goo.gl/rrpyf9jBtwYm53V48" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">Porta de Sant Antoni</a>. A 4 minutos caminando.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- From Palma -->
+          <div class="bg-white rounded-lg shadow-lg p-6" style="box-shadow: 0 -8px 16px -4px rgba(0, 0, 0, 0.06), 0 -4px 8px -2px rgba(0, 0, 0, 0.03), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+            <h3 class="text-2xl md:text-2xl font-stardom font-medium mb-4 text-gray-800 flex items-center">
+              <span class="text-2xl mr-3">🏛️</span>
+              Desde Palma
+            </h3>
+            
+            <!-- Large separator -->
+            <hr class="border-gray-300 mb-6">
+            
+            <div class="space-y-4">
+              <div class="flex flex-col h-64">
+                <h4 class="font-gambetta-medium font-medium text-gray-800 mb-4 text-lg">🚕 Taxi o Uber</h4>
+                <p class="-gray-600 text-lg mb-2">
+                  Opción cómoda y rápida desde cualquier punto de Palma.
+                </p>
+                <div class="text-gray-600 text-lg space-y-1 mt-2">
+                  <p><strong>Taxi:</strong> <a href="https://alfa.taxitronic.com:9898/Home/index/239" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">Radio-Taxi Ciutat</a></p>
+                  <p><strong>Uber:</strong> <a href="https://www.uber.com/global/es-es/r/cities/palma-es-ib-es/?uclick_id=c90c71ba-48e3-4cbc-ab01-5c27c0f550a5" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">Uber Palma</a></p>
+                </div>
+              </div>
+              <!-- Small separator -->
+              <hr class="border-gray-200 mb-6">
+              
+              <div class="flex flex-col h-42">
+                <h4 class="font-gambetta-medium font-medium text-gray-800 mb-4 text-lg">🚶‍♀️ Caminando</h4>
+                <p class="text-gray-600 text-lg">
+                  La ciudad no es muy grande e invita a pasear por las calles. 
+                  Es la forma más agradable, cómoda y fácil de llegar.
+                </p>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What to Expect -->
+      <section class="max-w-6xl mx-auto" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-stardom font-medium mb-8 text-center text-gray-800">
+          ¿Qué esperar?
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white rounded-lg shadow-md p-6 text-center">
+            <div class="text-3xl mb-4">🎵</div>
+            <h3 class="text-lg font-gambetta-medium font-medium mb-2 text-gray-800">Música</h3>
+            <p class="text-gray-600 text-sm">Bingo musical con canciones atemporales.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6 text-center">
+            <div class="text-3xl mb-4">🍻</div>
+            <h3 class="text-lg font-gambetta-medium font-medium mb-2 text-gray-800">Comida y Bebidas</h3>
+            <p class="text-gray-600 text-sm">Brindis y algo rico para el cuerpo y el alma.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6 text-center">
+            <div class="text-3xl mb-4">😄</div>
+            <h3 class="text-lg font-gambetta-medium font-medium mb-2 text-gray-800">Disfrute y relax</h3>
+            <p class="text-gray-600 text-sm">La mejor fórmula para empezar este fin de semana.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6 text-center">
+            <div class="text-3xl mb-4">👥</div>
+            <h3 class="text-lg font-gambetta-medium font-medium mb-2 text-gray-800">Familia y Amig@s</h3>
+            <p class="text-gray-600 text-sm">Personas que le dan sentido al verbo <em>compartir</em>.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Back to Main Page -->
+      <div class="text-center mt-16 md:mt-20" data-aos="fade-up">
+        <a
+          href="/elena-marina"
+          class="inline-block border-2 border-gray-800 hover:bg-gray-800 hover:text-white text-gray-800 font-semibold py-2 px-8 rounded-lg text-lg tracking-wide transition duration-300 ease-in-out transform hover:scale-105"
+        >
+          Volver a la página principal
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

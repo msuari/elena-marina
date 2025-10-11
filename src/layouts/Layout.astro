@@ -61,6 +61,11 @@ const { title } = Astro.props;
 						>La Celebración</a
 					>
 					<a
+						href="/elena-marina/preboda"
+						class="text-gray-600 hover:text-gray-900 transition duration-150 golden-gradient"
+						>Preboda</a
+					>
+					<a
 						href="/elena-marina/accommodation"
 						class="text-gray-600 hover:text-gray-900 transition duration-150"
 						>Alojamiento</a
@@ -125,6 +130,11 @@ const { title } = Astro.props;
 					>La Celebración</a
 				>
 				<a
+					href="/elena-marina/preboda"
+					class="block px-6 py-3 text-gray-700 hover:bg-gray-100 golden-gradient"
+					>Preboda</a
+				>
+				<a
 					href="/elena-marina/accommodation"
 					class="block px-6 py-3 text-gray-700 hover:bg-gray-100"
 					>Alojamiento</a
@@ -181,5 +191,47 @@ const { title } = Astro.props;
 				mobileMenu.classList.toggle("hidden");
 			});
 		</script>
+
+		<style>
+			@keyframes shimmer {
+				0% {
+					background-position: -200% 0;
+				}
+				100% {
+					background-position: 200% 0;
+				}
+			}
+
+			/* .golden-gradient {
+				background: linear-gradient(
+					45deg,
+					rgba(55, 65, 81, 0.5),
+					rgba(75, 85, 99, 0.5),
+					rgba(55, 65, 81, 0.5),
+					rgba(75, 85, 99, 0.5)
+				);
+				background-size: 200% 200%;
+				animation: shimmer 3s ease-in-out infinite;
+				padding: 4px 8px;
+				border-radius: 4px;
+				color: white;
+				font-weight: 500;
+			} */
+			.golden-gradient {
+				background: linear-gradient(
+					45deg,
+					rgba(156, 163, 175, 0.5),
+					rgba(209, 213, 219, 0.5),
+					rgba(156, 163, 175, 0.5),
+					rgba(209, 213, 219, 0.5)
+				);
+				background-size: 200% 200%;
+				animation: shimmer 3s ease-in-out infinite;
+				padding: 4px 8px;
+				border-radius: 4px;
+				color: #374151;
+				font-weight: 500;
+			}
+		</style>
 	</body>
 </html>
