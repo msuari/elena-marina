@@ -62,7 +62,7 @@ const { title } = Astro.props;
 					>
 					<a
 						href="/elena-marina/preboda"
-						class="text-gray-600 hover:text-gray-900 transition duration-150 golden-gradient"
+						class="text-gray-600 hover:text-gray-900 transition duration-150 golden-gradient py-2 px-4 rounded"
 						>Preboda</a
 					>
 					<a
@@ -227,10 +227,18 @@ const { title } = Astro.props;
 				);
 				background-size: 200% 200%;
 				animation: shimmer 3s ease-in-out infinite;
-				padding: 4px 8px;
 				border-radius: 4px;
 				color: #374151;
 				font-weight: 500;
+			}
+			
+			/* Mobile specific override for golden-gradient */
+			@media (max-width: 768px) {
+				.golden-gradient {
+					padding: 8px 12px;
+					margin: 0 24px 0 20px;
+					/* display: inline-block; */
+				}
 			}
 		</style>
 	</body>
